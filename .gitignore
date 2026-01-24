@@ -1,0 +1,33 @@
+# Build directories
+build/
+build-*/
+build-pascal-fix/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+*.cmake
+!CMakeLists.txt
+!cmake/*.cmake
+
+# Compiled binaries
+*.so
+*.so.*
+*.a
+*.o
+*.out
+*.exe
+
+# IDE
+.vscode/
+.idea/
+.windsurf/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.log
+*.tmp
+.DS_Store

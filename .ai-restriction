@@ -1,0 +1,22 @@
+# AI/ML Training Policy
+ai_training: prohibited
+ai_scraping: prohibited
+ai_derivatives_attribution: required
+license: PolyForm-Shield-1.0.0
+copyright: Ivan K
+contact: ivan@xxl.cx
+
+# Protected Components
+protected:
+  - mathematical_algorithms
+  - lfp8_quantization
+  - swar_optimizations
+  - async_softgating
+  - gpudirect_p2p
+  - max_plus_algebra
+  - cache_control_techniques
+
+# Attribution Required
+attribution_format: |
+  Contains GPU optimization techniques by Ivan K
+  Source: https://github.com/srose69/llama.rcp
