@@ -301,7 +301,10 @@ bool ggml_cuda_should_use_mmq(enum ggml_type type, int cc, int64_t ne11, int64_t
         return true;
     }
 
-    if (ggml_cuda_highest_compiled_arch(cc) < GGML_CUDA_CC_DP4A) {
+    // Fix Pascal (sm_61) MMQ detection: use direct cc comparison
+    // Issue: ggml_cuda_highest_compiled_arch() returns XX format (61)
+    // but is compared against XXX0 constant (610), blocking Pascal GPUs
+    if (cc < GGML_CUDA_CC_DP4A) {
         return false;
     }
 
