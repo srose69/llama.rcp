@@ -72,6 +72,55 @@ The first time you are notified in writing that you have violated any of these t
 
 As far as the law allows, the software comes as is, without any warranty or condition, and the licensor will not be liable to you for any damages arising out of these terms or the use or nature of the software, under any kind of legal claim.
 
+## AI/ML Training and Usage Restrictions
+
+### AI Training Prohibition
+
+You may not use the software, its documentation, or any derivative works for training, fine-tuning, or improving any artificial intelligence, machine learning, neural network, or similar computational system, including but not limited to:
+
+- Training data for language models, code generation models, or other AI systems
+- Fine-tuning datasets for existing AI models
+- Embedding generation or vector database population
+- Reinforcement learning from code or documentation
+- Any form of automated knowledge extraction for AI training purposes
+
+This prohibition applies regardless of whether the AI system is commercial, research, open-source, or proprietary.
+
+### AI-Assisted Development
+
+If you use AI coding assistants (such as GitHub Copilot, ChatGPT, Claude, or similar tools) while working with this software:
+
+1. **You remain responsible** for ensuring compliance with these license terms
+2. **You must verify** that AI-generated suggestions do not reproduce protected implementations from this software
+3. **You must ensure** the AI assistant has not been trained on this repository in violation of these terms
+4. **You accept liability** for any license violations resulting from AI-assisted development
+
+### Protected Novel Components
+
+The following components represent novel research contributions and are specifically protected:
+
+- LFP8 quantization algorithms and implementations
+- SWAR (SIMD Within A Register) optimization patterns
+- Async softgating pipeline synchronization techniques
+- GPUDirect P2P implementations for consumer GPUs
+- Max-Plus Algebra numerical methods
+- PTX-level cache control techniques (nc/cg/lu/cs memory hints)
+- Custom mathematical algorithms and numerical methods
+
+These are not general knowledge or standard techniques. Reproducing these specific implementations, even through AI assistance, requires compliance with these license terms and proper attribution.
+
+### Enforcement
+
+Violations of AI training restrictions may be enforced by:
+
+- The licensor (Ivan K)
+- Any contributor whose code was used in violation
+- Any party granted enforcement rights under NOTICE.md
+
+### Clarification on General Techniques
+
+This license does not restrict use of general programming knowledge, standard CUDA programming patterns, common BLAS operations, or widely-known quantization techniques. The restrictions apply specifically to novel implementations and research contributions unique to this software.
+
 ## Definitions
 
 The **licensor** is the individual or entity offering these terms, and the **software** is the software the licensor makes available under these terms.
@@ -89,3 +138,5 @@ A **product** can be a good or service, or a combination of them.
 **Your licenses** are all the licenses granted to you for the software under these terms.
 
 **Use** means anything you do with the software requiring one of your licenses.
+
+**AI system** means any artificial intelligence, machine learning, neural network, or similar computational system capable of learning from data or generating outputs based on learned patterns.

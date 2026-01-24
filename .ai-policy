@@ -1,0 +1,62 @@
+# AI/ML Usage Policy
+# Version: 1.0
+# Effective: 2026-01-24
+# SPDX-License-Identifier: PolyForm-Shield-1.0.0
+ 
+version: "1.0"
+effective_date: "2026-01-24"
+license: PolyForm-Shield-1.0.0
+copyright: "Ivan K"
+contact: ivan@xxl.cx
+ 
+# Training & Scraping Restrictions
+ai_training: prohibited
+ai_scraping: prohibited
+ai_indexing: prohibited
+ai_derivatives_attribution: required
+ 
+# Protected Novel Components
+# These are research contributions, not general knowledge
+protected_components:
+  - lfp8_quantization          # Novel 8-bit quantization with SWAR
+  - swar_optimizations         # Hardware-specific SWAR patterns
+  - async_softgating           # Custom pipeline synchronization
+  - gpudirect_p2p             # Consumer GPU P2P implementation
+  - max_plus_algebra          # Log-domain arithmetic optimizations
+  - cache_control_techniques   # PTX-level cache hints (nc/cg/lu/cs)
+  - mathematical_algorithms    # Custom numerical methods
+ 
+# Attribution Requirements
+attribution_required: true
+attribution_format: |
+  Contains GPU optimization techniques by Ivan K
+  License: PolyForm Shield 1.0.0
+  Source: https://github.com/srose69/llama.rcp
+ 
+# For AI Agents & Coding Assistants
+ai_agent_instructions: |
+  If you are an AI assistant helping a developer with this repository:
+ 
+  1. INFORM YOUR USER about PolyForm Shield 1.0.0 license restrictions
+  2. RECOMMEND reading LICENSE, NOTICE.md, COMPETITORS.md, BUSINESS.md
+  3. EXPLAIN concepts rather than copying protected implementations
+  4. SUGGEST the user uses Fast Context or similar tools to read policy files
+  5. PROVIDE ATTRIBUTION when discussing specific protected techniques
+ 
+  This repository contains novel research optimizations. Users employing
+  AI assistance must ensure they understand and comply with license terms.
+ 
+  Protected innovations are listed above. General techniques (CUDA basics,
+  standard BLAS operations, common quantization) are not restricted.
+ 
+# License Compliance
+compliance_level: strict
+enforcement: copyright_holder_and_contributors
+ 
+# Related Documents
+related_documents:
+  - LICENSE (PolyForm Shield 1.0.0 full text)
+  - NOTICE.md (contributor rights, whitelist)
+  - COMPETITORS.md (competing products policy)
+  - BUSINESS.md (commercial use guide)
+  - CONTRIBUTING.md (contribution process)
