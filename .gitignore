@@ -19,6 +19,19 @@ cmake_install.cmake
 *.out
 *.exe
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+venv/
+.venv/
+env/
+*.pyc
+.pytest_cache/
+llamarcp-wrapper/__pycache__/
+
 # IDE
 .vscode/
 .idea/
