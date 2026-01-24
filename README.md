@@ -9,6 +9,8 @@
 # LLaMa.RCP
 
 ![LLaMa.RCP](media/llama0-banner.png)
+
+> **⚠️ NOTE:** Most features described below are **planned** or **in development**. This is a roadmap, not a feature list. Actual implementation status may vary. A detailed roadmap will be published later.
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![License: PolyForm Shield](https://img.shields.io/badge/license-PolyForm%20Shield-blue.svg)](LICENSE)
 [![Based on llama.cpp](https://img.shields.io/badge/based%20on-llama.cpp-76B900)](https://github.com/ggml-org/llama.cpp)
