@@ -15,6 +15,7 @@ protected:
   - gpudirect_p2p
   - max_plus_algebra
   - cache_control_techniques
+  - ptx_kernels
 
 # Attribution Required
 attribution_format: |
