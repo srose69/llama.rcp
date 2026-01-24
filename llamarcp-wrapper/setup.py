@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 setup(
     name="llamarcp",
     version="0.3.16",
-    description="Python wrapper for llama.rcp (llama.cpp fork)",
+    description="Python wrapper for llama.rcp",
     packages=find_packages(include=["llamarcp", "llamarcp.*"]),
     package_data={
         "llamarcp": ["lib/*.so*", "py.typed"],

@@ -30,7 +30,7 @@ from collections import deque
 from pathlib import Path
 
 
-from .llamarcp_types import *
+from .llamarcp_wrapper import *
 from .llamarcp_grammar import LlamaGrammar
 from .llamarcp_cache import (
     BaseLlamaCache,
@@ -39,7 +39,7 @@ from .llamarcp_cache import (
     LlamaRAMCache,  # type: ignore
 )
 from .llamarcp_tokenizer import BaseLlamaTokenizer, LlamaTokenizer
-import llamarcp.llamarcp as llamarcp
+import llamarcp.llamarcp_wrapper as llamarcp
 import llamarcp.llama_chat_format as llama_chat_format
 
 from llamarcp.llama_speculative import LlamaDraftModel

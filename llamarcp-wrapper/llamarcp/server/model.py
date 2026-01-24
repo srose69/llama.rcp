@@ -4,8 +4,8 @@ import json
 
 from typing import Dict, Optional, Union, List
 
-import llamarcp
-import llamarcp.llama_speculative as llama_speculative
+import llamarcp.llamarcp_wrapper as llamarcp
+import llamarcp.llamarcp_wrapper as llama_speculative
 import llamarcp.llama_tokenizer as llama_tokenizer
 
 from llamarcp.server.settings import ModelSettings

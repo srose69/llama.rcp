@@ -23,7 +23,7 @@ from typing import (
     TYPE_CHECKING,
 )
 
-import llamarcp.llamarcp as llamarcp
+import llamarcp.llamarcp_wrapper as llamarcp
 
 from llamarcp._ctypes_extensions import (
     load_shared_library,

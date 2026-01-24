@@ -11,7 +11,7 @@ import diskcache
 
 import llamarcp.llama
 
-from .llamarcp_types import *
+from .llamarcp_wrapper import *
 
 
 class BaseLlamaCache(ABC):

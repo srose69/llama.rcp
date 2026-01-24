@@ -29,7 +29,7 @@ from jinja2.sandbox import ImmutableSandboxedEnvironment
 import numpy as np
 import numpy.typing as npt
 
-import llamarcp.llamarcp as llamarcp
+import llamarcp.llamarcp_wrapper as llamarcp
 import llamarcp.llama as llama
 import llamarcp.llama_types as llama_types
 import llamarcp.llama_grammar as llama_grammar

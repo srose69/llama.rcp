@@ -22,7 +22,7 @@ from .llamarcp_types import *
 from .llamarcp_grammar import LlamaGrammar
 from ._utils import suppress_stdout_stderr
 
-import llamarcp.llamarcp as llamarcp
+import llamarcp.llamarcp_wrapper as llamarcp
 
 
 # Python wrappers over llama.h structs
