@@ -65,6 +65,7 @@ LLM inference in C/C++/Rust with Python bindings. CUDA + Vulkan + CPU only.
 - **[COMPETITORS.md](COMPETITORS.md)** - For those building competing products, whitelist process, collaboration vs competition
 
 ---
+P.S - README will be partially updated on-the-go.
 
 ## What's different here
 
