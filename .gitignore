@@ -31,3 +31,6 @@ cmake_install.cmake
 *.log
 *.tmp
 .DS_Store
+
+# Internal documentation (not for public repo)
+docs/responses-api/
