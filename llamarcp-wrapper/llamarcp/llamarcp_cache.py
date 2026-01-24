@@ -9,9 +9,12 @@ from collections import OrderedDict
 
 import diskcache
 
-import llamarcp.llama
+from typing import TYPE_CHECKING
 
-from .llamarcp_wrapper import *
+from .llamarcp_wrapper import *  # noqa: F403
+
+if TYPE_CHECKING:
+    from .llamarcp_api import LlamaState
 
 
 class BaseLlamaCache(ABC):
@@ -32,7 +35,7 @@ class BaseLlamaCache(ABC):
         pass
 
     @abstractmethod
-    def __getitem__(self, key: Sequence[int]) -> "llamarcp.llama.LlamaState":
+    def __getitem__(self, key: Sequence[int]) -> "LlamaState":
         raise NotImplementedError
 
     @abstractmethod
@@ -40,9 +43,7 @@ class BaseLlamaCache(ABC):
         raise NotImplementedError
 
     @abstractmethod
-    def __setitem__(
-        self, key: Sequence[int], value: "llamarcp.llama.LlamaState"
-    ) -> None:
+    def __setitem__(self, key: Sequence[int], value: "LlamaState") -> None:
         raise NotImplementedError
 
 
@@ -52,9 +53,7 @@ class LlamaRAMCache(BaseLlamaCache):
     def __init__(self, capacity_bytes: int = (2 << 30)):
         super().__init__(capacity_bytes)
         self.capacity_bytes = capacity_bytes
-        self.cache_state: OrderedDict[
-            Tuple[int, ...], "llamarcp.llama.LlamaState"
-        ] = OrderedDict()
+        self.cache_state: OrderedDict[Tuple[int, ...], LlamaState] = OrderedDict()
 
     @property
     def cache_size(self):
@@ -66,9 +65,10 @@ class LlamaRAMCache(BaseLlamaCache):
     ) -> Optional[Tuple[int, ...]]:
         min_len = 0
         min_key = None
+        from .llamarcp_api import Llama
+
         keys = (
-            (k, llamarcp.llama.Llama.longest_token_prefix(k, key))
-            for k in self.cache_state.keys()
+            (k, Llama.longest_token_prefix(k, key)) for k in self.cache_state.keys()
         )
         for k, prefix_len in keys:
             if prefix_len > min_len:
@@ -76,7 +76,7 @@ class LlamaRAMCache(BaseLlamaCache):
                 min_key = k
         return min_key
 
-    def __getitem__(self, key: Sequence[int]) -> "llamarcp.llama.LlamaState":
+    def __getitem__(self, key: Sequence[int]) -> "LlamaState":
         key = tuple(key)
         _key = self._find_longest_prefix_key(key)
         if _key is None:
@@ -88,7 +88,7 @@ class LlamaRAMCache(BaseLlamaCache):
     def __contains__(self, key: Sequence[int]) -> bool:
         return self._find_longest_prefix_key(tuple(key)) is not None
 
-    def __setitem__(self, key: Sequence[int], value: "llamarcp.llama.LlamaState"):
+    def __setitem__(self, key: Sequence[int], value: "LlamaState"):
         key = tuple(key)
         if key in self.cache_state:
             del self.cache_state[key]
@@ -120,19 +120,21 @@ class LlamaDiskCache(BaseLlamaCache):
     ) -> Optional[Tuple[int, ...]]:
         min_len = 0
         min_key: Optional[Tuple[int, ...]] = None
+        from .llamarcp_api import Llama
+
         for k in self.cache.iterkeys():  # type: ignore
-            prefix_len = llamarcp.llama.Llama.longest_token_prefix(k, key)
+            prefix_len = Llama.longest_token_prefix(k, key)
             if prefix_len > min_len:
                 min_len = prefix_len
                 min_key = k  # type: ignore
         return min_key
 
-    def __getitem__(self, key: Sequence[int]) -> "llamarcp.llama.LlamaState":
+    def __getitem__(self, key: Sequence[int]) -> "LlamaState":
         key = tuple(key)
         _key = self._find_longest_prefix_key(key)
         if _key is None:
             raise KeyError("Key not found")
-        value: "llamarcp.llama.LlamaState" = self.cache.pop(_key)  # type: ignore
+        value: "LlamaState" = self.cache.pop(_key)  # type: ignore
         # NOTE: This puts an integer as key in cache, which breaks,
         # Llama.longest_token_prefix(k, key) above since k is not a tuple of ints/tokens
         # self.cache.push(_key, side="front")  # type: ignore
@@ -141,7 +143,7 @@ class LlamaDiskCache(BaseLlamaCache):
     def __contains__(self, key: Sequence[int]) -> bool:
         return self._find_longest_prefix_key(tuple(key)) is not None
 
-    def __setitem__(self, key: Sequence[int], value: "llamarcp.llama.LlamaState"):
+    def __setitem__(self, key: Sequence[int], value: "LlamaState"):
         print("LlamaDiskCache.__setitem__: called", file=sys.stderr)
         key = tuple(key)
         if key in self.cache:

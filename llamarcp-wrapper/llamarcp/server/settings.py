@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+# pyright: reportMissingImports=false
+
 import multiprocessing
 
 from typing import Optional, List, Literal, Union, Dict, cast
@@ -83,9 +85,7 @@ class ModelSettings(BaseSettings):
         ge=0,
         description="The number of threads to use when batch processing. Use -1 for max cpu threads",
     )
-    rope_scaling_type: int = Field(
-        default=llamarcp.LLAMA_ROPE_SCALING_TYPE_UNSPECIFIED
-    )
+    rope_scaling_type: int = Field(default=llamarcp.LLAMA_ROPE_SCALING_TYPE_UNSPECIFIED)
     rope_freq_base: float = Field(default=0.0, description="RoPE base frequency")
     rope_freq_scale: float = Field(
         default=0.0, description="RoPE frequency scaling factor"

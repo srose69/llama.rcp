@@ -24,7 +24,7 @@ These functions are called by wrapper but **DO NOT EXIST** in current llama.cpp:
 
 | Function | Status | Location | Issue | Action Required |
 |----------|--------|----------|-------|-----------------|
-| `llama_get_kv_self` | ⚡ **REMOVED** | `llamarcp_wrapper.py:1449` | Symbol not found | Replace with `llama_get_memory()` |
+| `llama_get_kv_self` | ✅ **DONE** | `llamarcp_wrapper.py:1443` | Removed binding | Replaced with comment, use `llama_get_memory()` |
 | `llama_kv_self_clear` | ⚡ **REMOVED** | Used in cache management | Symbol not found | Replace with `llama_memory_clear()` |
 | `llama_kv_cache_seq_rm` | ⚡ **REMOVED** | Cache operations | Symbol not found | Replace with `llama_memory_seq_rm()` |
 | `llama_kv_cache_seq_cp` | ⚡ **REMOVED** | Cache operations | Symbol not found | Replace with `llama_memory_seq_cp()` |

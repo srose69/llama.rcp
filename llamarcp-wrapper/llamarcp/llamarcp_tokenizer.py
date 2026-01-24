@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+# pyright: reportMissingImports=false
+
 import abc
 from typing import (
     List,
@@ -8,7 +10,6 @@ from typing import (
 )
 
 import llamarcp
-from llamarcp.llama_types import List
 
 
 class BaseLlamaTokenizer(abc.ABC):

@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+# pyright: reportAttributeAccessIssue=false, reportArgumentType=false, reportMissingImports=false
+
 import os
 import sys
 import uuid
@@ -30,19 +32,32 @@ from collections import deque
 from pathlib import Path
 
 
-from .llamarcp_wrapper import *
+from .llamarcp_wrapper import *  # noqa: F403
 from .llamarcp_grammar import LlamaGrammar
 from .llamarcp_cache import (
-    BaseLlamaCache,
-    LlamaCache,  # type: ignore
-    LlamaDiskCache,  # type: ignore
-    LlamaRAMCache,  # type: ignore
+    BaseLlamaCache,  # type: ignore
 )
 from .llamarcp_tokenizer import BaseLlamaTokenizer, LlamaTokenizer
+from .llamarcp_types import (
+    CompletionLogprobs,
+    CreateCompletionResponse,
+    CreateCompletionStreamResponse,
+    Completion,
+    ChatCompletionRequestMessage,
+    ChatCompletionFunction,
+    ChatCompletionRequestFunctionCall,
+    ChatCompletionTool,
+    ChatCompletionToolChoiceOption,
+    ChatCompletionRequestResponseFormat,
+    CreateChatCompletionResponse,
+    CreateChatCompletionStreamResponse,
+    CreateEmbeddingResponse,
+    Embedding,
+)
 import llamarcp.llamarcp_wrapper as llamarcp
-import llamarcp.llama_chat_format as llama_chat_format
+import llamarcp.llamarcp_chat_format as llama_chat_format
 
-from llamarcp.llama_speculative import LlamaDraftModel
+from llamarcp.llamarcp_speculative import LlamaDraftModel
 
 import numpy as np
 import numpy.typing as npt
@@ -77,9 +92,7 @@ class Llama:
         n_ubatch: int = 512,
         n_threads: Optional[int] = None,
         n_threads_batch: Optional[int] = None,
-        rope_scaling_type: Optional[
-            int
-        ] = llamarcp.LLAMA_ROPE_SCALING_TYPE_UNSPECIFIED,
+        rope_scaling_type: Optional[int] = llamarcp.LLAMA_ROPE_SCALING_TYPE_UNSPECIFIED,
         pooling_type: int = llamarcp.LLAMA_POOLING_TYPE_UNSPECIFIED,
         rope_freq_base: float = 0.0,
         rope_freq_scale: float = 0.0,
@@ -257,28 +270,28 @@ class Llama:
             for i, (k, v) in enumerate(kv_overrides.items()):
                 self._kv_overrides_array[i].key = k.encode("utf-8")
                 if isinstance(v, bool):
-                    self._kv_overrides_array[
-                        i
-                    ].tag = llamarcp.LLAMA_KV_OVERRIDE_TYPE_BOOL
+                    self._kv_overrides_array[i].tag = (
+                        llamarcp.LLAMA_KV_OVERRIDE_TYPE_BOOL
+                    )
                     self._kv_overrides_array[i].value.val_bool = v
                 elif isinstance(v, int):
-                    self._kv_overrides_array[
-                        i
-                    ].tag = llamarcp.LLAMA_KV_OVERRIDE_TYPE_INT
+                    self._kv_overrides_array[i].tag = (
+                        llamarcp.LLAMA_KV_OVERRIDE_TYPE_INT
+                    )
                     self._kv_overrides_array[i].value.val_i64 = v
                 elif isinstance(v, float):
-                    self._kv_overrides_array[
-                        i
-                    ].tag = llamarcp.LLAMA_KV_OVERRIDE_TYPE_FLOAT
+                    self._kv_overrides_array[i].tag = (
+                        llamarcp.LLAMA_KV_OVERRIDE_TYPE_FLOAT
+                    )
                     self._kv_overrides_array[i].value.val_f64 = v
                 elif isinstance(v, str):  # type: ignore
                     v_bytes = v.encode("utf-8")
                     if len(v_bytes) > 128:  # TODO: Make this a constant
                         raise ValueError(f"Value for {k} is too long: {v}")
                     v_bytes = v_bytes.ljust(128, b"\0")
-                    self._kv_overrides_array[
-                        i
-                    ].tag = llamarcp.LLAMA_KV_OVERRIDE_TYPE_STR
+                    self._kv_overrides_array[i].tag = (
+                        llamarcp.LLAMA_KV_OVERRIDE_TYPE_STR
+                    )
                     # copy min(v_bytes, 128) to str_value
                     address = typing.cast(
                         int,
@@ -294,9 +307,9 @@ class Llama:
                 else:
                     raise ValueError(f"Unknown value type for {k}: {v}")
 
-            self._kv_overrides_array[
-                -1
-            ].key = b"\0"  # ensure sentinel element is zeroed
+            self._kv_overrides_array[-1].key = (
+                b"\0"  # ensure sentinel element is zeroed
+            )
             self.model_params.kv_overrides = self._kv_overrides_array
 
         self.n_batch = min(n_ctx, n_batch)  # ???
@@ -443,9 +456,9 @@ class Llama:
 
         self.chat_format = chat_format
         self.chat_handler = chat_handler
-        self._chat_handlers: Dict[
-            str, llama_chat_format.LlamaChatCompletionHandler
-        ] = {}
+        self._chat_handlers: Dict[str, llama_chat_format.LlamaChatCompletionHandler] = (
+            {}
+        )
 
         self.draft_model = draft_model
 
@@ -460,7 +473,7 @@ class Llama:
         self.n_tokens = 0
         self.input_ids: npt.NDArray[np.intc] = np.ndarray((n_ctx,), dtype=np.intc)
         self.scores: npt.NDArray[np.single] = np.ndarray(
-            (n_ctx if logits_all == True else n_batch, self._n_vocab), dtype=np.single
+            (n_ctx if logits_all else n_batch, self._n_vocab), dtype=np.single
         )
 
         self._mirostat_mu = ctypes.c_float(
@@ -726,7 +739,7 @@ class Llama:
             sampler.add_grammar(self._model, grammar)
 
         if temp < 0.0:
-            sampler.add_softmax()
+            # NOTE: add_softmax() removed - llama_sampler_init_softmax no longer exists
             sampler.add_dist(self._seed)
         elif temp == 0.0:
             sampler.add_greedy()
@@ -934,7 +947,8 @@ class Llama:
 
                 sample_idx += 1
                 if stopping_criteria is not None and stopping_criteria(
-                    self._input_ids[: sample_idx], self._scores[sample_idx - self.n_tokens, :]
+                    self._input_ids[:sample_idx],
+                    self._scores[sample_idx - self.n_tokens, :],
                 ):
                     return
                 tokens_or_none = yield token
@@ -1041,7 +1055,8 @@ class Llama:
         data: Union[List[List[float]], List[List[List[float]]]] = []
 
         def decode_batch(seq_sizes: List[int]):
-            llamarcp.llama_kv_self_clear(self._ctx.ctx)
+            mem = llamarcp.llama_get_memory(self._ctx.ctx)
+            llamarcp.llama_memory_clear(mem, True)
             self._ctx.decode(self._batch)
             self._batch.reset()
 
@@ -1112,7 +1127,8 @@ class Llama:
 
         output = data[0] if isinstance(input, str) else data
 
-        llamarcp.llama_kv_self_clear(self._ctx.ctx)
+        mem = llamarcp.llama_get_memory(self._ctx.ctx)
+        llamarcp.llama_memory_clear(mem, True)
         self.reset()
 
         if return_count:
@@ -1157,9 +1173,9 @@ class Llama:
         bos_token_id: int = self.token_bos()
         cls_token_id: int = self._model.token_cls()
         sep_token_id: int = self._model.token_sep()
-        prefix_token_id: int = 0 # self._model.token_prefix() # TODO: Fix
-        middle_token_id: int = 0 # self._model.token_middle() # TODO: Fix
-        suffix_token_id: int = 0 # self._model.token_suffix() # TODO: Fix
+        prefix_token_id: int = 0  # self._model.token_prefix() # TODO: Fix
+        middle_token_id: int = 0  # self._model.token_middle() # TODO: Fix
+        suffix_token_id: int = 0  # self._model.token_suffix() # TODO: Fix
         add_space_prefix: bool = (
             self.metadata.get("tokenizer.ggml.add_space_prefix", "true") == "true"
         )
@@ -1315,7 +1331,7 @@ class Llama:
         if seed is not None:
             self.set_seed(seed)
         else:
-            self.set_seed(random.Random(self._seed).randint(0, 2 ** 32))
+            self.set_seed(random.Random(self._seed).randint(0, 2**32))
 
         finish_reason = "length"
         multibyte_fix = 0
@@ -2318,7 +2334,11 @@ class Llama:
         if additional_files:
             for additonal_file_name in additional_files:
                 # find the additional shard file:
-                matching_additional_files = [file for file in file_list if fnmatch.fnmatch(file, additonal_file_name)]
+                matching_additional_files = [
+                    file
+                    for file in file_list
+                    if fnmatch.fnmatch(file, additonal_file_name)
+                ]
 
                 if len(matching_additional_files) == 0:
                     raise ValueError(

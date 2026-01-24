@@ -1,17 +1,17 @@
 """Python implementation of llama grammar parser directly translated from C++ source file in vendor/llama.cpp/common/grammar-parser.cpp."""
 
 # flake8: noqa
+from __future__ import annotations
+
+# pyright: reportArgumentType=false
+
 from pathlib import Path
 
+import re
+import sys
+import typing
+from typing import Any, Optional, List, Union, Set, Tuple
 from itertools import groupby
-from typing import (
-    Any,
-    Set,
-    List,
-    Optional,
-    Tuple,
-    Union,
-)
 
 LLAMA_GRAMMAR_DEFAULT_ROOT = "root"
 

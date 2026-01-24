@@ -1,12 +1,14 @@
 from __future__ import annotations
 
+# pyright: reportArgumentType=false, reportAttributeAccessIssue=false
+
 import json
 
 from typing import Dict, Optional, Union, List
 
 import llamarcp.llamarcp_wrapper as llamarcp
 import llamarcp.llamarcp_wrapper as llama_speculative
-import llamarcp.llama_tokenizer as llama_tokenizer
+import llamarcp.llamarcp_tokenizer as llama_tokenizer
 
 from llamarcp.server.settings import ModelSettings
 
