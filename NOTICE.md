@@ -4,7 +4,8 @@
 
 - **For users:** Commercial use allowed with attribution. See [LICENSE](LICENSE) and [BUSINESS.md](BUSINESS.md).
 - **For contributors:** You keep copyright, become co-licensor, Ivan K manages whitelist. See [CONTRIBUTING.md](CONTRIBUTING.md).
-- **AI training:** Prohibited.
+- **AI training:** Prohibited. See [.ai-policy](.ai-policy) and [LICENSE](LICENSE) AI/ML section.
+- **AI-assisted development:** User remains responsible for compliance. See [LICENSE](LICENSE) AI-Assisted Development section.
 
 ---
 
@@ -18,16 +19,34 @@
 - [Whitelist](#whitelist-approved-competing-products)
 - [FAQ](#faq-for-contributors)
 
+**Related Policies:**
+- [LICENSE](LICENSE) - PolyForm Shield 1.0.0 with AI/ML restrictions
+- [.ai-policy](.ai-policy) - AI training prohibition and protected components
+- [BUSINESS.md](BUSINESS.md) - Commercial use and attribution
+- [COMPETITORS.md](COMPETITORS.md) - Competing products whitelist process
+
 ---
 
 ## About This Project
 
-Based on llama.cpp (MIT) by Georgi Gerganov and ggml team
+Based on llama.cpp (MIT) by Georgi Gerganov and ggml team.
 Custom components Copyright (c) 2026 Ivan K - Licensed under PolyForm Shield 1.0.0.
-Commercial use allowed with attribution. Competing products need permission.
-AI training prohibited. See [LICENSE](LICENSE) and [BUSINESS.md](BUSINESS.md) for details.
+
+**Key Points:**
+- Commercial use allowed with attribution
+- Competing products need whitelist permission
+- AI training on this code is prohibited
+- Users of AI coding assistants remain responsible for license compliance
+
 **For users:** Commercial use allowed with attribution. See [LICENSE](LICENSE) and [BUSINESS.md](BUSINESS.md).
+**For AI users:** If using AI coding assistants, you are responsible for ensuring compliance. See [LICENSE](LICENSE) AI-Assisted Development section.
 **For contributors:** Read below carefully. Full process in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+**Policy Documents:**
+- [LICENSE](LICENSE) - Full license with AI/ML restrictions
+- [.ai-policy](.ai-policy) - AI training prohibition and protected novel components
+- [BUSINESS.md](BUSINESS.md) - Commercial use guide
+- [COMPETITORS.md](COMPETITORS.md) - Whitelist process for competing products
 
 ---
 
