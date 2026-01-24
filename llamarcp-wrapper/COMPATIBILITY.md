@@ -57,21 +57,22 @@ The C++ binaries work perfectly:
 - No Python API
 - CLI only
 
-### Option 2: Use Official llamarcp
+### Option 2: Use Official llama-cpp-python
 
 Install the official Python bindings:
 
 ```bash
 # Install from PyPI
-pip install llamarcp
+# TODO: Not published yet
+# pip install llama-cpp-python
 
 # With CUDA support
-CMAKE_ARGS="-DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=61" \
-  pip install llamarcp --force-reinstall --no-cache-dir
+# CMAKE_ARGS="-DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=61" \
+#   pip install llama-cpp-python --force-reinstall --no-cache-dir
 
 # Use llama.rcp libraries
-export LLAMA_CPP_LIB_PATH=/path/to/llama.rcp/build/bin
-python3 -c "from llamarcp import Llama; ..."
+# export LLAMA_CPP_LIB_PATH=/path/to/llama.rcp/build/bin
+# python3 -c "from llama_cpp import Llama; ..."
 ```
 
 **Pros:**
@@ -82,6 +83,7 @@ python3 -c "from llamarcp import Llama; ..."
 **Cons:**
 - External dependency
 - May need rebuild for custom backends
+- **Not published to PyPI yet**
 
 ### Option 3: Update Wrapper Code (Advanced)
 
@@ -106,7 +108,7 @@ The wrapper needs extensive updates to use the new API:
 **For immediate use:**
 1. Use `./build/bin/llama-cli` for testing
 2. Use `./build/bin/llama-server` for API access
-3. Install official `llamarcp` if Python API needed
+3. ~~Install official `llama-cpp-python` if Python API needed~~ (not on PyPI yet)
 
 **For long-term:**
 1. Track llama.cpp updates
