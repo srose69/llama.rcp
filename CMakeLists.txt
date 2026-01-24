@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14) # for add_link_options and implicit target directories.
-project("llama.cpp" C CXX)
+project("llama.rcp" C CXX)
 include(CheckIncludeFileCXX)
 
 #set(CMAKE_WARN_DEPRECATED YES)
@@ -188,7 +188,7 @@ if (NOT MSVC)
 endif()
 
 include("cmake/license.cmake")
-license_add_file("llama.cpp" "LICENSE")
+license_add_file("llama.rcp" "LICENSE")
 
 #
 # 3rd-party
