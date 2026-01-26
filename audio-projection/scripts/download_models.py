@@ -8,10 +8,11 @@ This script downloads:
 
 import os
 import argparse
+from typing import Optional
 from huggingface_hub import snapshot_download
 
 
-def download_model(repo_id: str, local_dir: str, token: str | None = None):
+def download_model(repo_id: str, local_dir: str, token: Optional[str] = None):
     """
     Download model from HuggingFace Hub.
     
