@@ -11,7 +11,7 @@ import argparse
 from huggingface_hub import snapshot_download
 
 
-def download_model(repo_id: str, local_dir: str, token: str = None):
+def download_model(repo_id: str, local_dir: str, token: str | None = None):
     """
     Download model from HuggingFace Hub.
     
