@@ -46,4 +46,67 @@ llamarcp-wrapper/__pycache__/
 .DS_Store
 
 # Internal documentation (not for public repo)
-docs/responses-api/
+docs/responses-api/# Environment variables and secrets
+.env
+*.env
+
+# Model weights and checkpoints
+models/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.gguf
+
+# Training outputs
+outputs/
+checkpoints/
+logs/
+wandb/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data
+data/
+*.wav
+*.mp3
+*.flac
+
+# Audio projection specific
+audio-projection/.env
+audio-projection/models/
