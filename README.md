@@ -74,7 +74,7 @@ This repository is licensed under **PolyForm Shield 1.0.0** with specific restri
 </details>
 
 ---
-Look at rnd branch too =)
+Look at rnd branch too =) I need HELP XD
 
 **Table of Contents:**
 - [What's different](#whats-different-here)
