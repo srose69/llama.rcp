@@ -1,0 +1,11 @@
+{
+  "upper_to_lower": "2048 \u2192 2048",
+  "total_workers": 1536,
+  "pipes": [
+    "Pipe 1: [512\u00d7512\u00d7512]",
+    "Pipe 2: [512\u00d7512\u00d7512]",
+    "Pipe 3: [512\u00d7512\u00d7512]"
+  ],
+  "rigid_mapping": "Complete coverage from upper to lower embedding space",
+  "next_step": "Run build_pipes.py to create trainable pipe structures"
+}

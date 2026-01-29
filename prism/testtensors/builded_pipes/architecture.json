@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "num_pipes": 3,
+  "workers_per_pipe": 512,
+  "total_workers": 1536,
+  "sparse_activation_ratio": 0.3,
+  "active_workers_per_pipe": 154,
+  "upper_model": {
+    "output_dim": 2048,
+    "matrix_shape": [
+      152064,
+      2048
+    ],
+    "tiled_dir": "output/tiled_head"
+  },
+  "lower_model": {
+    "input_dim": 2048,
+    "matrix_shape": [
+      152064,
+      2048
+    ],
+    "tiled_dir": "output/tiled_embed"
+  },
+  "transformation": {
+    "input_dim": 2048,
+    "output_dim": 2048,
+    "formula": "Input + X = Target (least squares)"
+  },
+  "pipes": {
+    "pipe1": {
+      "pipe_id": 1,
+      "structure": "cubic",
+      "dimensions": [
+        512,
+        512,
+        512
+      ],
+      "num_workers": 512,
+      "tile_shape": [
+        512,
+        512
+      ],
+      "description": "Fixed cubic tensor - learns transformation pattern A"
+    },
+    "pipe2": {
+      "pipe_id": 2,
+      "structure": "cubic",
+      "dimensions": [
+        512,
+        512,
+        512
+      ],
+      "num_workers": 512,
+      "tile_shape": [
+        512,
+        512
+      ],
+      "description": "Fixed cubic tensor - learns transformation pattern B"
+    },
+    "pipe3": {
+      "pipe_id": 3,
+      "structure": "flexible",
+      "dimensions": [
+        512,
+        512
+      ],
+      "num_workers": 164,
+      "tile_shape": [
+        512,
+        512
+      ],
+      "description": "remainder tiles (164 workers)"
+    }
+  }
+}

@@ -1,0 +1,8706 @@
+[
+  {
+    "worker_id": 0,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker000_dims[682:1365]"
+  },
+  {
+    "worker_id": 1,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker001_dims[682:1365]"
+  },
+  {
+    "worker_id": 2,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker002_dims[682:1365]"
+  },
+  {
+    "worker_id": 3,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker003_dims[682:1365]"
+  },
+  {
+    "worker_id": 4,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker004_dims[682:1365]"
+  },
+  {
+    "worker_id": 5,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker005_dims[682:1365]"
+  },
+  {
+    "worker_id": 6,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker006_dims[682:1365]"
+  },
+  {
+    "worker_id": 7,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker007_dims[682:1365]"
+  },
+  {
+    "worker_id": 8,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker008_dims[682:1365]"
+  },
+  {
+    "worker_id": 9,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker009_dims[682:1365]"
+  },
+  {
+    "worker_id": 10,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker010_dims[682:1365]"
+  },
+  {
+    "worker_id": 11,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker011_dims[682:1365]"
+  },
+  {
+    "worker_id": 12,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker012_dims[682:1365]"
+  },
+  {
+    "worker_id": 13,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker013_dims[682:1365]"
+  },
+  {
+    "worker_id": 14,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker014_dims[682:1365]"
+  },
+  {
+    "worker_id": 15,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker015_dims[682:1365]"
+  },
+  {
+    "worker_id": 16,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker016_dims[682:1365]"
+  },
+  {
+    "worker_id": 17,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker017_dims[682:1365]"
+  },
+  {
+    "worker_id": 18,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker018_dims[682:1365]"
+  },
+  {
+    "worker_id": 19,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker019_dims[682:1365]"
+  },
+  {
+    "worker_id": 20,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker020_dims[682:1365]"
+  },
+  {
+    "worker_id": 21,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker021_dims[682:1365]"
+  },
+  {
+    "worker_id": 22,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker022_dims[682:1365]"
+  },
+  {
+    "worker_id": 23,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker023_dims[682:1365]"
+  },
+  {
+    "worker_id": 24,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker024_dims[682:1365]"
+  },
+  {
+    "worker_id": 25,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker025_dims[682:1365]"
+  },
+  {
+    "worker_id": 26,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker026_dims[682:1365]"
+  },
+  {
+    "worker_id": 27,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker027_dims[682:1365]"
+  },
+  {
+    "worker_id": 28,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker028_dims[682:1365]"
+  },
+  {
+    "worker_id": 29,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker029_dims[682:1365]"
+  },
+  {
+    "worker_id": 30,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker030_dims[682:1365]"
+  },
+  {
+    "worker_id": 31,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker031_dims[682:1365]"
+  },
+  {
+    "worker_id": 32,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker032_dims[682:1365]"
+  },
+  {
+    "worker_id": 33,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker033_dims[682:1365]"
+  },
+  {
+    "worker_id": 34,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker034_dims[682:1365]"
+  },
+  {
+    "worker_id": 35,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker035_dims[682:1365]"
+  },
+  {
+    "worker_id": 36,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker036_dims[682:1365]"
+  },
+  {
+    "worker_id": 37,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker037_dims[682:1365]"
+  },
+  {
+    "worker_id": 38,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker038_dims[682:1365]"
+  },
+  {
+    "worker_id": 39,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker039_dims[682:1365]"
+  },
+  {
+    "worker_id": 40,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker040_dims[682:1365]"
+  },
+  {
+    "worker_id": 41,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker041_dims[682:1365]"
+  },
+  {
+    "worker_id": 42,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker042_dims[682:1365]"
+  },
+  {
+    "worker_id": 43,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker043_dims[682:1365]"
+  },
+  {
+    "worker_id": 44,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker044_dims[682:1365]"
+  },
+  {
+    "worker_id": 45,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker045_dims[682:1365]"
+  },
+  {
+    "worker_id": 46,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker046_dims[682:1365]"
+  },
+  {
+    "worker_id": 47,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker047_dims[682:1365]"
+  },
+  {
+    "worker_id": 48,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker048_dims[682:1365]"
+  },
+  {
+    "worker_id": 49,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker049_dims[682:1365]"
+  },
+  {
+    "worker_id": 50,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker050_dims[682:1365]"
+  },
+  {
+    "worker_id": 51,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker051_dims[682:1365]"
+  },
+  {
+    "worker_id": 52,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker052_dims[682:1365]"
+  },
+  {
+    "worker_id": 53,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker053_dims[682:1365]"
+  },
+  {
+    "worker_id": 54,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker054_dims[682:1365]"
+  },
+  {
+    "worker_id": 55,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker055_dims[682:1365]"
+  },
+  {
+    "worker_id": 56,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker056_dims[682:1365]"
+  },
+  {
+    "worker_id": 57,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker057_dims[682:1365]"
+  },
+  {
+    "worker_id": 58,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker058_dims[682:1365]"
+  },
+  {
+    "worker_id": 59,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker059_dims[682:1365]"
+  },
+  {
+    "worker_id": 60,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker060_dims[682:1365]"
+  },
+  {
+    "worker_id": 61,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker061_dims[682:1365]"
+  },
+  {
+    "worker_id": 62,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker062_dims[682:1365]"
+  },
+  {
+    "worker_id": 63,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker063_dims[682:1365]"
+  },
+  {
+    "worker_id": 64,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker064_dims[682:1365]"
+  },
+  {
+    "worker_id": 65,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker065_dims[682:1365]"
+  },
+  {
+    "worker_id": 66,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker066_dims[682:1365]"
+  },
+  {
+    "worker_id": 67,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker067_dims[682:1365]"
+  },
+  {
+    "worker_id": 68,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker068_dims[682:1365]"
+  },
+  {
+    "worker_id": 69,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker069_dims[682:1365]"
+  },
+  {
+    "worker_id": 70,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker070_dims[682:1365]"
+  },
+  {
+    "worker_id": 71,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker071_dims[682:1365]"
+  },
+  {
+    "worker_id": 72,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker072_dims[682:1365]"
+  },
+  {
+    "worker_id": 73,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker073_dims[682:1365]"
+  },
+  {
+    "worker_id": 74,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker074_dims[682:1365]"
+  },
+  {
+    "worker_id": 75,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker075_dims[682:1365]"
+  },
+  {
+    "worker_id": 76,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker076_dims[682:1365]"
+  },
+  {
+    "worker_id": 77,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker077_dims[682:1365]"
+  },
+  {
+    "worker_id": 78,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker078_dims[682:1365]"
+  },
+  {
+    "worker_id": 79,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker079_dims[682:1365]"
+  },
+  {
+    "worker_id": 80,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker080_dims[682:1365]"
+  },
+  {
+    "worker_id": 81,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker081_dims[682:1365]"
+  },
+  {
+    "worker_id": 82,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker082_dims[682:1365]"
+  },
+  {
+    "worker_id": 83,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker083_dims[682:1365]"
+  },
+  {
+    "worker_id": 84,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker084_dims[682:1365]"
+  },
+  {
+    "worker_id": 85,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker085_dims[682:1365]"
+  },
+  {
+    "worker_id": 86,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker086_dims[682:1365]"
+  },
+  {
+    "worker_id": 87,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker087_dims[682:1365]"
+  },
+  {
+    "worker_id": 88,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker088_dims[682:1365]"
+  },
+  {
+    "worker_id": 89,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker089_dims[682:1365]"
+  },
+  {
+    "worker_id": 90,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker090_dims[682:1365]"
+  },
+  {
+    "worker_id": 91,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker091_dims[682:1365]"
+  },
+  {
+    "worker_id": 92,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker092_dims[682:1365]"
+  },
+  {
+    "worker_id": 93,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker093_dims[682:1365]"
+  },
+  {
+    "worker_id": 94,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker094_dims[682:1365]"
+  },
+  {
+    "worker_id": 95,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker095_dims[682:1365]"
+  },
+  {
+    "worker_id": 96,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker096_dims[682:1365]"
+  },
+  {
+    "worker_id": 97,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker097_dims[682:1365]"
+  },
+  {
+    "worker_id": 98,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker098_dims[682:1365]"
+  },
+  {
+    "worker_id": 99,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker099_dims[682:1365]"
+  },
+  {
+    "worker_id": 100,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker100_dims[682:1365]"
+  },
+  {
+    "worker_id": 101,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker101_dims[682:1365]"
+  },
+  {
+    "worker_id": 102,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker102_dims[682:1365]"
+  },
+  {
+    "worker_id": 103,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker103_dims[682:1365]"
+  },
+  {
+    "worker_id": 104,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker104_dims[682:1365]"
+  },
+  {
+    "worker_id": 105,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker105_dims[682:1365]"
+  },
+  {
+    "worker_id": 106,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker106_dims[682:1365]"
+  },
+  {
+    "worker_id": 107,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker107_dims[682:1365]"
+  },
+  {
+    "worker_id": 108,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker108_dims[682:1365]"
+  },
+  {
+    "worker_id": 109,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker109_dims[682:1365]"
+  },
+  {
+    "worker_id": 110,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker110_dims[682:1365]"
+  },
+  {
+    "worker_id": 111,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker111_dims[682:1365]"
+  },
+  {
+    "worker_id": 112,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker112_dims[682:1365]"
+  },
+  {
+    "worker_id": 113,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker113_dims[682:1365]"
+  },
+  {
+    "worker_id": 114,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker114_dims[682:1365]"
+  },
+  {
+    "worker_id": 115,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker115_dims[682:1365]"
+  },
+  {
+    "worker_id": 116,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker116_dims[682:1365]"
+  },
+  {
+    "worker_id": 117,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker117_dims[682:1365]"
+  },
+  {
+    "worker_id": 118,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker118_dims[682:1365]"
+  },
+  {
+    "worker_id": 119,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker119_dims[682:1365]"
+  },
+  {
+    "worker_id": 120,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker120_dims[682:1365]"
+  },
+  {
+    "worker_id": 121,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker121_dims[682:1365]"
+  },
+  {
+    "worker_id": 122,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker122_dims[682:1365]"
+  },
+  {
+    "worker_id": 123,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker123_dims[682:1365]"
+  },
+  {
+    "worker_id": 124,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker124_dims[682:1365]"
+  },
+  {
+    "worker_id": 125,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker125_dims[682:1365]"
+  },
+  {
+    "worker_id": 126,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker126_dims[682:1365]"
+  },
+  {
+    "worker_id": 127,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker127_dims[682:1365]"
+  },
+  {
+    "worker_id": 128,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker128_dims[682:1365]"
+  },
+  {
+    "worker_id": 129,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker129_dims[682:1365]"
+  },
+  {
+    "worker_id": 130,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker130_dims[682:1365]"
+  },
+  {
+    "worker_id": 131,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker131_dims[682:1365]"
+  },
+  {
+    "worker_id": 132,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker132_dims[682:1365]"
+  },
+  {
+    "worker_id": 133,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker133_dims[682:1365]"
+  },
+  {
+    "worker_id": 134,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker134_dims[682:1365]"
+  },
+  {
+    "worker_id": 135,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker135_dims[682:1365]"
+  },
+  {
+    "worker_id": 136,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker136_dims[682:1365]"
+  },
+  {
+    "worker_id": 137,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker137_dims[682:1365]"
+  },
+  {
+    "worker_id": 138,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker138_dims[682:1365]"
+  },
+  {
+    "worker_id": 139,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker139_dims[682:1365]"
+  },
+  {
+    "worker_id": 140,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker140_dims[682:1365]"
+  },
+  {
+    "worker_id": 141,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker141_dims[682:1365]"
+  },
+  {
+    "worker_id": 142,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker142_dims[682:1365]"
+  },
+  {
+    "worker_id": 143,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker143_dims[682:1365]"
+  },
+  {
+    "worker_id": 144,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker144_dims[682:1365]"
+  },
+  {
+    "worker_id": 145,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker145_dims[682:1365]"
+  },
+  {
+    "worker_id": 146,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker146_dims[682:1365]"
+  },
+  {
+    "worker_id": 147,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker147_dims[682:1365]"
+  },
+  {
+    "worker_id": 148,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker148_dims[682:1365]"
+  },
+  {
+    "worker_id": 149,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker149_dims[682:1365]"
+  },
+  {
+    "worker_id": 150,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker150_dims[682:1365]"
+  },
+  {
+    "worker_id": 151,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker151_dims[682:1365]"
+  },
+  {
+    "worker_id": 152,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker152_dims[682:1365]"
+  },
+  {
+    "worker_id": 153,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker153_dims[682:1365]"
+  },
+  {
+    "worker_id": 154,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker154_dims[682:1365]"
+  },
+  {
+    "worker_id": 155,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker155_dims[682:1365]"
+  },
+  {
+    "worker_id": 156,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker156_dims[682:1365]"
+  },
+  {
+    "worker_id": 157,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker157_dims[682:1365]"
+  },
+  {
+    "worker_id": 158,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker158_dims[682:1365]"
+  },
+  {
+    "worker_id": 159,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker159_dims[682:1365]"
+  },
+  {
+    "worker_id": 160,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker160_dims[682:1365]"
+  },
+  {
+    "worker_id": 161,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker161_dims[682:1365]"
+  },
+  {
+    "worker_id": 162,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker162_dims[682:1365]"
+  },
+  {
+    "worker_id": 163,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker163_dims[682:1365]"
+  },
+  {
+    "worker_id": 164,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker164_dims[682:1365]"
+  },
+  {
+    "worker_id": 165,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker165_dims[682:1365]"
+  },
+  {
+    "worker_id": 166,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker166_dims[682:1365]"
+  },
+  {
+    "worker_id": 167,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker167_dims[682:1365]"
+  },
+  {
+    "worker_id": 168,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker168_dims[682:1365]"
+  },
+  {
+    "worker_id": 169,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker169_dims[682:1365]"
+  },
+  {
+    "worker_id": 170,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker170_dims[682:1365]"
+  },
+  {
+    "worker_id": 171,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker171_dims[682:1365]"
+  },
+  {
+    "worker_id": 172,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker172_dims[682:1365]"
+  },
+  {
+    "worker_id": 173,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker173_dims[682:1365]"
+  },
+  {
+    "worker_id": 174,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker174_dims[682:1365]"
+  },
+  {
+    "worker_id": 175,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker175_dims[682:1365]"
+  },
+  {
+    "worker_id": 176,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker176_dims[682:1365]"
+  },
+  {
+    "worker_id": 177,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker177_dims[682:1365]"
+  },
+  {
+    "worker_id": 178,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker178_dims[682:1365]"
+  },
+  {
+    "worker_id": 179,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker179_dims[682:1365]"
+  },
+  {
+    "worker_id": 180,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker180_dims[682:1365]"
+  },
+  {
+    "worker_id": 181,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker181_dims[682:1365]"
+  },
+  {
+    "worker_id": 182,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker182_dims[682:1365]"
+  },
+  {
+    "worker_id": 183,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker183_dims[682:1365]"
+  },
+  {
+    "worker_id": 184,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker184_dims[682:1365]"
+  },
+  {
+    "worker_id": 185,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker185_dims[682:1365]"
+  },
+  {
+    "worker_id": 186,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker186_dims[682:1365]"
+  },
+  {
+    "worker_id": 187,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker187_dims[682:1365]"
+  },
+  {
+    "worker_id": 188,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker188_dims[682:1365]"
+  },
+  {
+    "worker_id": 189,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker189_dims[682:1365]"
+  },
+  {
+    "worker_id": 190,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker190_dims[682:1365]"
+  },
+  {
+    "worker_id": 191,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker191_dims[682:1365]"
+  },
+  {
+    "worker_id": 192,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker192_dims[682:1365]"
+  },
+  {
+    "worker_id": 193,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker193_dims[682:1365]"
+  },
+  {
+    "worker_id": 194,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker194_dims[682:1365]"
+  },
+  {
+    "worker_id": 195,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker195_dims[682:1365]"
+  },
+  {
+    "worker_id": 196,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker196_dims[682:1365]"
+  },
+  {
+    "worker_id": 197,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker197_dims[682:1365]"
+  },
+  {
+    "worker_id": 198,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker198_dims[682:1365]"
+  },
+  {
+    "worker_id": 199,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker199_dims[682:1365]"
+  },
+  {
+    "worker_id": 200,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker200_dims[682:1365]"
+  },
+  {
+    "worker_id": 201,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker201_dims[682:1365]"
+  },
+  {
+    "worker_id": 202,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker202_dims[682:1365]"
+  },
+  {
+    "worker_id": 203,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker203_dims[682:1365]"
+  },
+  {
+    "worker_id": 204,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker204_dims[682:1365]"
+  },
+  {
+    "worker_id": 205,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker205_dims[682:1365]"
+  },
+  {
+    "worker_id": 206,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker206_dims[682:1365]"
+  },
+  {
+    "worker_id": 207,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker207_dims[682:1365]"
+  },
+  {
+    "worker_id": 208,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker208_dims[682:1365]"
+  },
+  {
+    "worker_id": 209,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker209_dims[682:1365]"
+  },
+  {
+    "worker_id": 210,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker210_dims[682:1365]"
+  },
+  {
+    "worker_id": 211,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker211_dims[682:1365]"
+  },
+  {
+    "worker_id": 212,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker212_dims[682:1365]"
+  },
+  {
+    "worker_id": 213,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker213_dims[682:1365]"
+  },
+  {
+    "worker_id": 214,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker214_dims[682:1365]"
+  },
+  {
+    "worker_id": 215,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker215_dims[682:1365]"
+  },
+  {
+    "worker_id": 216,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker216_dims[682:1365]"
+  },
+  {
+    "worker_id": 217,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker217_dims[682:1365]"
+  },
+  {
+    "worker_id": 218,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker218_dims[682:1365]"
+  },
+  {
+    "worker_id": 219,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker219_dims[682:1365]"
+  },
+  {
+    "worker_id": 220,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker220_dims[682:1365]"
+  },
+  {
+    "worker_id": 221,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker221_dims[682:1365]"
+  },
+  {
+    "worker_id": 222,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker222_dims[682:1365]"
+  },
+  {
+    "worker_id": 223,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker223_dims[682:1365]"
+  },
+  {
+    "worker_id": 224,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker224_dims[682:1365]"
+  },
+  {
+    "worker_id": 225,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker225_dims[682:1365]"
+  },
+  {
+    "worker_id": 226,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker226_dims[682:1365]"
+  },
+  {
+    "worker_id": 227,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker227_dims[682:1365]"
+  },
+  {
+    "worker_id": 228,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker228_dims[682:1365]"
+  },
+  {
+    "worker_id": 229,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker229_dims[682:1365]"
+  },
+  {
+    "worker_id": 230,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker230_dims[682:1365]"
+  },
+  {
+    "worker_id": 231,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker231_dims[682:1365]"
+  },
+  {
+    "worker_id": 232,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker232_dims[682:1365]"
+  },
+  {
+    "worker_id": 233,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker233_dims[682:1365]"
+  },
+  {
+    "worker_id": 234,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker234_dims[682:1365]"
+  },
+  {
+    "worker_id": 235,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker235_dims[682:1365]"
+  },
+  {
+    "worker_id": 236,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker236_dims[682:1365]"
+  },
+  {
+    "worker_id": 237,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker237_dims[682:1365]"
+  },
+  {
+    "worker_id": 238,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker238_dims[682:1365]"
+  },
+  {
+    "worker_id": 239,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker239_dims[682:1365]"
+  },
+  {
+    "worker_id": 240,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker240_dims[682:1365]"
+  },
+  {
+    "worker_id": 241,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker241_dims[682:1365]"
+  },
+  {
+    "worker_id": 242,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker242_dims[682:1365]"
+  },
+  {
+    "worker_id": 243,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker243_dims[682:1365]"
+  },
+  {
+    "worker_id": 244,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker244_dims[682:1365]"
+  },
+  {
+    "worker_id": 245,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker245_dims[682:1365]"
+  },
+  {
+    "worker_id": 246,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker246_dims[682:1365]"
+  },
+  {
+    "worker_id": 247,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker247_dims[682:1365]"
+  },
+  {
+    "worker_id": 248,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker248_dims[682:1365]"
+  },
+  {
+    "worker_id": 249,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker249_dims[682:1365]"
+  },
+  {
+    "worker_id": 250,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker250_dims[682:1365]"
+  },
+  {
+    "worker_id": 251,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker251_dims[682:1365]"
+  },
+  {
+    "worker_id": 252,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker252_dims[682:1365]"
+  },
+  {
+    "worker_id": 253,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker253_dims[682:1365]"
+  },
+  {
+    "worker_id": 254,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker254_dims[682:1365]"
+  },
+  {
+    "worker_id": 255,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker255_dims[682:1365]"
+  },
+  {
+    "worker_id": 256,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker256_dims[682:1365]"
+  },
+  {
+    "worker_id": 257,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker257_dims[682:1365]"
+  },
+  {
+    "worker_id": 258,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker258_dims[682:1365]"
+  },
+  {
+    "worker_id": 259,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker259_dims[682:1365]"
+  },
+  {
+    "worker_id": 260,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker260_dims[682:1365]"
+  },
+  {
+    "worker_id": 261,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker261_dims[682:1365]"
+  },
+  {
+    "worker_id": 262,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker262_dims[682:1365]"
+  },
+  {
+    "worker_id": 263,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker263_dims[682:1365]"
+  },
+  {
+    "worker_id": 264,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker264_dims[682:1365]"
+  },
+  {
+    "worker_id": 265,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker265_dims[682:1365]"
+  },
+  {
+    "worker_id": 266,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker266_dims[682:1365]"
+  },
+  {
+    "worker_id": 267,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker267_dims[682:1365]"
+  },
+  {
+    "worker_id": 268,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker268_dims[682:1365]"
+  },
+  {
+    "worker_id": 269,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker269_dims[682:1365]"
+  },
+  {
+    "worker_id": 270,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker270_dims[682:1365]"
+  },
+  {
+    "worker_id": 271,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker271_dims[682:1365]"
+  },
+  {
+    "worker_id": 272,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker272_dims[682:1365]"
+  },
+  {
+    "worker_id": 273,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker273_dims[682:1365]"
+  },
+  {
+    "worker_id": 274,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker274_dims[682:1365]"
+  },
+  {
+    "worker_id": 275,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker275_dims[682:1365]"
+  },
+  {
+    "worker_id": 276,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker276_dims[682:1365]"
+  },
+  {
+    "worker_id": 277,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker277_dims[682:1365]"
+  },
+  {
+    "worker_id": 278,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker278_dims[682:1365]"
+  },
+  {
+    "worker_id": 279,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker279_dims[682:1365]"
+  },
+  {
+    "worker_id": 280,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker280_dims[682:1365]"
+  },
+  {
+    "worker_id": 281,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker281_dims[682:1365]"
+  },
+  {
+    "worker_id": 282,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker282_dims[682:1365]"
+  },
+  {
+    "worker_id": 283,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker283_dims[682:1365]"
+  },
+  {
+    "worker_id": 284,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker284_dims[682:1365]"
+  },
+  {
+    "worker_id": 285,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker285_dims[682:1365]"
+  },
+  {
+    "worker_id": 286,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker286_dims[682:1365]"
+  },
+  {
+    "worker_id": 287,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker287_dims[682:1365]"
+  },
+  {
+    "worker_id": 288,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker288_dims[682:1365]"
+  },
+  {
+    "worker_id": 289,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker289_dims[682:1365]"
+  },
+  {
+    "worker_id": 290,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker290_dims[682:1365]"
+  },
+  {
+    "worker_id": 291,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker291_dims[682:1365]"
+  },
+  {
+    "worker_id": 292,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker292_dims[682:1365]"
+  },
+  {
+    "worker_id": 293,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker293_dims[682:1365]"
+  },
+  {
+    "worker_id": 294,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker294_dims[682:1365]"
+  },
+  {
+    "worker_id": 295,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker295_dims[682:1365]"
+  },
+  {
+    "worker_id": 296,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker296_dims[682:1365]"
+  },
+  {
+    "worker_id": 297,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker297_dims[682:1365]"
+  },
+  {
+    "worker_id": 298,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker298_dims[682:1365]"
+  },
+  {
+    "worker_id": 299,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker299_dims[682:1365]"
+  },
+  {
+    "worker_id": 300,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker300_dims[682:1365]"
+  },
+  {
+    "worker_id": 301,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker301_dims[682:1365]"
+  },
+  {
+    "worker_id": 302,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker302_dims[682:1365]"
+  },
+  {
+    "worker_id": 303,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker303_dims[682:1365]"
+  },
+  {
+    "worker_id": 304,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker304_dims[682:1365]"
+  },
+  {
+    "worker_id": 305,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker305_dims[682:1365]"
+  },
+  {
+    "worker_id": 306,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker306_dims[682:1365]"
+  },
+  {
+    "worker_id": 307,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker307_dims[682:1365]"
+  },
+  {
+    "worker_id": 308,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker308_dims[682:1365]"
+  },
+  {
+    "worker_id": 309,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker309_dims[682:1365]"
+  },
+  {
+    "worker_id": 310,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker310_dims[682:1365]"
+  },
+  {
+    "worker_id": 311,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker311_dims[682:1365]"
+  },
+  {
+    "worker_id": 312,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker312_dims[682:1365]"
+  },
+  {
+    "worker_id": 313,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker313_dims[682:1365]"
+  },
+  {
+    "worker_id": 314,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker314_dims[682:1365]"
+  },
+  {
+    "worker_id": 315,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker315_dims[682:1365]"
+  },
+  {
+    "worker_id": 316,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker316_dims[682:1365]"
+  },
+  {
+    "worker_id": 317,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker317_dims[682:1365]"
+  },
+  {
+    "worker_id": 318,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker318_dims[682:1365]"
+  },
+  {
+    "worker_id": 319,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker319_dims[682:1365]"
+  },
+  {
+    "worker_id": 320,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker320_dims[682:1365]"
+  },
+  {
+    "worker_id": 321,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker321_dims[682:1365]"
+  },
+  {
+    "worker_id": 322,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker322_dims[682:1365]"
+  },
+  {
+    "worker_id": 323,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker323_dims[682:1365]"
+  },
+  {
+    "worker_id": 324,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker324_dims[682:1365]"
+  },
+  {
+    "worker_id": 325,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker325_dims[682:1365]"
+  },
+  {
+    "worker_id": 326,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker326_dims[682:1365]"
+  },
+  {
+    "worker_id": 327,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker327_dims[682:1365]"
+  },
+  {
+    "worker_id": 328,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker328_dims[682:1365]"
+  },
+  {
+    "worker_id": 329,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker329_dims[682:1365]"
+  },
+  {
+    "worker_id": 330,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker330_dims[682:1365]"
+  },
+  {
+    "worker_id": 331,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker331_dims[682:1365]"
+  },
+  {
+    "worker_id": 332,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker332_dims[682:1365]"
+  },
+  {
+    "worker_id": 333,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker333_dims[682:1365]"
+  },
+  {
+    "worker_id": 334,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker334_dims[682:1365]"
+  },
+  {
+    "worker_id": 335,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker335_dims[682:1365]"
+  },
+  {
+    "worker_id": 336,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker336_dims[682:1365]"
+  },
+  {
+    "worker_id": 337,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker337_dims[682:1365]"
+  },
+  {
+    "worker_id": 338,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker338_dims[682:1365]"
+  },
+  {
+    "worker_id": 339,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker339_dims[682:1365]"
+  },
+  {
+    "worker_id": 340,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker340_dims[682:1365]"
+  },
+  {
+    "worker_id": 341,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker341_dims[682:1365]"
+  },
+  {
+    "worker_id": 342,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker342_dims[682:1365]"
+  },
+  {
+    "worker_id": 343,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker343_dims[682:1365]"
+  },
+  {
+    "worker_id": 344,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker344_dims[682:1365]"
+  },
+  {
+    "worker_id": 345,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker345_dims[682:1365]"
+  },
+  {
+    "worker_id": 346,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker346_dims[682:1365]"
+  },
+  {
+    "worker_id": 347,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker347_dims[682:1365]"
+  },
+  {
+    "worker_id": 348,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker348_dims[682:1365]"
+  },
+  {
+    "worker_id": 349,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker349_dims[682:1365]"
+  },
+  {
+    "worker_id": 350,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker350_dims[682:1365]"
+  },
+  {
+    "worker_id": 351,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker351_dims[682:1365]"
+  },
+  {
+    "worker_id": 352,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker352_dims[682:1365]"
+  },
+  {
+    "worker_id": 353,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker353_dims[682:1365]"
+  },
+  {
+    "worker_id": 354,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker354_dims[682:1365]"
+  },
+  {
+    "worker_id": 355,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker355_dims[682:1365]"
+  },
+  {
+    "worker_id": 356,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker356_dims[682:1365]"
+  },
+  {
+    "worker_id": 357,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker357_dims[682:1365]"
+  },
+  {
+    "worker_id": 358,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker358_dims[682:1365]"
+  },
+  {
+    "worker_id": 359,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker359_dims[682:1365]"
+  },
+  {
+    "worker_id": 360,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker360_dims[682:1365]"
+  },
+  {
+    "worker_id": 361,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker361_dims[682:1365]"
+  },
+  {
+    "worker_id": 362,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker362_dims[682:1365]"
+  },
+  {
+    "worker_id": 363,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker363_dims[682:1365]"
+  },
+  {
+    "worker_id": 364,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker364_dims[682:1365]"
+  },
+  {
+    "worker_id": 365,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker365_dims[682:1365]"
+  },
+  {
+    "worker_id": 366,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker366_dims[682:1365]"
+  },
+  {
+    "worker_id": 367,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker367_dims[682:1365]"
+  },
+  {
+    "worker_id": 368,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker368_dims[682:1365]"
+  },
+  {
+    "worker_id": 369,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker369_dims[682:1365]"
+  },
+  {
+    "worker_id": 370,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker370_dims[682:1365]"
+  },
+  {
+    "worker_id": 371,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker371_dims[682:1365]"
+  },
+  {
+    "worker_id": 372,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker372_dims[682:1365]"
+  },
+  {
+    "worker_id": 373,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker373_dims[682:1365]"
+  },
+  {
+    "worker_id": 374,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker374_dims[682:1365]"
+  },
+  {
+    "worker_id": 375,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker375_dims[682:1365]"
+  },
+  {
+    "worker_id": 376,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker376_dims[682:1365]"
+  },
+  {
+    "worker_id": 377,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker377_dims[682:1365]"
+  },
+  {
+    "worker_id": 378,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker378_dims[682:1365]"
+  },
+  {
+    "worker_id": 379,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker379_dims[682:1365]"
+  },
+  {
+    "worker_id": 380,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker380_dims[682:1365]"
+  },
+  {
+    "worker_id": 381,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker381_dims[682:1365]"
+  },
+  {
+    "worker_id": 382,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker382_dims[682:1365]"
+  },
+  {
+    "worker_id": 383,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker383_dims[682:1365]"
+  },
+  {
+    "worker_id": 384,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker384_dims[682:1365]"
+  },
+  {
+    "worker_id": 385,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker385_dims[682:1365]"
+  },
+  {
+    "worker_id": 386,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker386_dims[682:1365]"
+  },
+  {
+    "worker_id": 387,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker387_dims[682:1365]"
+  },
+  {
+    "worker_id": 388,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker388_dims[682:1365]"
+  },
+  {
+    "worker_id": 389,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker389_dims[682:1365]"
+  },
+  {
+    "worker_id": 390,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker390_dims[682:1365]"
+  },
+  {
+    "worker_id": 391,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker391_dims[682:1365]"
+  },
+  {
+    "worker_id": 392,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker392_dims[682:1365]"
+  },
+  {
+    "worker_id": 393,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker393_dims[682:1365]"
+  },
+  {
+    "worker_id": 394,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker394_dims[682:1365]"
+  },
+  {
+    "worker_id": 395,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker395_dims[682:1365]"
+  },
+  {
+    "worker_id": 396,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker396_dims[682:1365]"
+  },
+  {
+    "worker_id": 397,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker397_dims[682:1365]"
+  },
+  {
+    "worker_id": 398,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker398_dims[682:1365]"
+  },
+  {
+    "worker_id": 399,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker399_dims[682:1365]"
+  },
+  {
+    "worker_id": 400,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker400_dims[682:1365]"
+  },
+  {
+    "worker_id": 401,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker401_dims[682:1365]"
+  },
+  {
+    "worker_id": 402,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker402_dims[682:1365]"
+  },
+  {
+    "worker_id": 403,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker403_dims[682:1365]"
+  },
+  {
+    "worker_id": 404,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker404_dims[682:1365]"
+  },
+  {
+    "worker_id": 405,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker405_dims[682:1365]"
+  },
+  {
+    "worker_id": 406,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker406_dims[682:1365]"
+  },
+  {
+    "worker_id": 407,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker407_dims[682:1365]"
+  },
+  {
+    "worker_id": 408,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker408_dims[682:1365]"
+  },
+  {
+    "worker_id": 409,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker409_dims[682:1365]"
+  },
+  {
+    "worker_id": 410,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker410_dims[682:1365]"
+  },
+  {
+    "worker_id": 411,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker411_dims[682:1365]"
+  },
+  {
+    "worker_id": 412,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker412_dims[682:1365]"
+  },
+  {
+    "worker_id": 413,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker413_dims[682:1365]"
+  },
+  {
+    "worker_id": 414,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker414_dims[682:1365]"
+  },
+  {
+    "worker_id": 415,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker415_dims[682:1365]"
+  },
+  {
+    "worker_id": 416,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker416_dims[682:1365]"
+  },
+  {
+    "worker_id": 417,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker417_dims[682:1365]"
+  },
+  {
+    "worker_id": 418,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker418_dims[682:1365]"
+  },
+  {
+    "worker_id": 419,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker419_dims[682:1365]"
+  },
+  {
+    "worker_id": 420,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker420_dims[682:1365]"
+  },
+  {
+    "worker_id": 421,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker421_dims[682:1365]"
+  },
+  {
+    "worker_id": 422,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker422_dims[682:1365]"
+  },
+  {
+    "worker_id": 423,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker423_dims[682:1365]"
+  },
+  {
+    "worker_id": 424,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker424_dims[682:1365]"
+  },
+  {
+    "worker_id": 425,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker425_dims[682:1365]"
+  },
+  {
+    "worker_id": 426,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker426_dims[682:1365]"
+  },
+  {
+    "worker_id": 427,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker427_dims[682:1365]"
+  },
+  {
+    "worker_id": 428,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker428_dims[682:1365]"
+  },
+  {
+    "worker_id": 429,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker429_dims[682:1365]"
+  },
+  {
+    "worker_id": 430,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker430_dims[682:1365]"
+  },
+  {
+    "worker_id": 431,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker431_dims[682:1365]"
+  },
+  {
+    "worker_id": 432,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker432_dims[682:1365]"
+  },
+  {
+    "worker_id": 433,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker433_dims[682:1365]"
+  },
+  {
+    "worker_id": 434,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker434_dims[682:1365]"
+  },
+  {
+    "worker_id": 435,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker435_dims[682:1365]"
+  },
+  {
+    "worker_id": 436,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker436_dims[682:1365]"
+  },
+  {
+    "worker_id": 437,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker437_dims[682:1365]"
+  },
+  {
+    "worker_id": 438,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker438_dims[682:1365]"
+  },
+  {
+    "worker_id": 439,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker439_dims[682:1365]"
+  },
+  {
+    "worker_id": 440,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker440_dims[682:1365]"
+  },
+  {
+    "worker_id": 441,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker441_dims[682:1365]"
+  },
+  {
+    "worker_id": 442,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker442_dims[682:1365]"
+  },
+  {
+    "worker_id": 443,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker443_dims[682:1365]"
+  },
+  {
+    "worker_id": 444,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker444_dims[682:1365]"
+  },
+  {
+    "worker_id": 445,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker445_dims[682:1365]"
+  },
+  {
+    "worker_id": 446,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker446_dims[682:1365]"
+  },
+  {
+    "worker_id": 447,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker447_dims[682:1365]"
+  },
+  {
+    "worker_id": 448,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker448_dims[682:1365]"
+  },
+  {
+    "worker_id": 449,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker449_dims[682:1365]"
+  },
+  {
+    "worker_id": 450,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker450_dims[682:1365]"
+  },
+  {
+    "worker_id": 451,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker451_dims[682:1365]"
+  },
+  {
+    "worker_id": 452,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker452_dims[682:1365]"
+  },
+  {
+    "worker_id": 453,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker453_dims[682:1365]"
+  },
+  {
+    "worker_id": 454,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker454_dims[682:1365]"
+  },
+  {
+    "worker_id": 455,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker455_dims[682:1365]"
+  },
+  {
+    "worker_id": 456,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker456_dims[682:1365]"
+  },
+  {
+    "worker_id": 457,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker457_dims[682:1365]"
+  },
+  {
+    "worker_id": 458,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker458_dims[682:1365]"
+  },
+  {
+    "worker_id": 459,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker459_dims[682:1365]"
+  },
+  {
+    "worker_id": 460,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker460_dims[682:1365]"
+  },
+  {
+    "worker_id": 461,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker461_dims[682:1365]"
+  },
+  {
+    "worker_id": 462,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker462_dims[682:1365]"
+  },
+  {
+    "worker_id": 463,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker463_dims[682:1365]"
+  },
+  {
+    "worker_id": 464,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker464_dims[682:1365]"
+  },
+  {
+    "worker_id": 465,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker465_dims[682:1365]"
+  },
+  {
+    "worker_id": 466,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker466_dims[682:1365]"
+  },
+  {
+    "worker_id": 467,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker467_dims[682:1365]"
+  },
+  {
+    "worker_id": 468,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker468_dims[682:1365]"
+  },
+  {
+    "worker_id": 469,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker469_dims[682:1365]"
+  },
+  {
+    "worker_id": 470,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker470_dims[682:1365]"
+  },
+  {
+    "worker_id": 471,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker471_dims[682:1365]"
+  },
+  {
+    "worker_id": 472,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker472_dims[682:1365]"
+  },
+  {
+    "worker_id": 473,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker473_dims[682:1365]"
+  },
+  {
+    "worker_id": 474,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker474_dims[682:1365]"
+  },
+  {
+    "worker_id": 475,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker475_dims[682:1365]"
+  },
+  {
+    "worker_id": 476,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker476_dims[682:1365]"
+  },
+  {
+    "worker_id": 477,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker477_dims[682:1365]"
+  },
+  {
+    "worker_id": 478,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker478_dims[682:1365]"
+  },
+  {
+    "worker_id": 479,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker479_dims[682:1365]"
+  },
+  {
+    "worker_id": 480,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker480_dims[682:1365]"
+  },
+  {
+    "worker_id": 481,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker481_dims[682:1365]"
+  },
+  {
+    "worker_id": 482,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker482_dims[682:1365]"
+  },
+  {
+    "worker_id": 483,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker483_dims[682:1365]"
+  },
+  {
+    "worker_id": 484,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker484_dims[682:1365]"
+  },
+  {
+    "worker_id": 485,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker485_dims[682:1365]"
+  },
+  {
+    "worker_id": 486,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker486_dims[682:1365]"
+  },
+  {
+    "worker_id": 487,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker487_dims[682:1365]"
+  },
+  {
+    "worker_id": 488,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker488_dims[682:1365]"
+  },
+  {
+    "worker_id": 489,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker489_dims[682:1365]"
+  },
+  {
+    "worker_id": 490,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker490_dims[682:1365]"
+  },
+  {
+    "worker_id": 491,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker491_dims[682:1365]"
+  },
+  {
+    "worker_id": 492,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker492_dims[682:1365]"
+  },
+  {
+    "worker_id": 493,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker493_dims[682:1365]"
+  },
+  {
+    "worker_id": 494,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker494_dims[682:1365]"
+  },
+  {
+    "worker_id": 495,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker495_dims[682:1365]"
+  },
+  {
+    "worker_id": 496,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker496_dims[682:1365]"
+  },
+  {
+    "worker_id": 497,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker497_dims[682:1365]"
+  },
+  {
+    "worker_id": 498,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker498_dims[682:1365]"
+  },
+  {
+    "worker_id": 499,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker499_dims[682:1365]"
+  },
+  {
+    "worker_id": 500,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker500_dims[682:1365]"
+  },
+  {
+    "worker_id": 501,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker501_dims[682:1365]"
+  },
+  {
+    "worker_id": 502,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker502_dims[682:1365]"
+  },
+  {
+    "worker_id": 503,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker503_dims[682:1365]"
+  },
+  {
+    "worker_id": 504,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker504_dims[682:1365]"
+  },
+  {
+    "worker_id": 505,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker505_dims[682:1365]"
+  },
+  {
+    "worker_id": 506,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker506_dims[682:1365]"
+  },
+  {
+    "worker_id": 507,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker507_dims[682:1365]"
+  },
+  {
+    "worker_id": 508,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker508_dims[682:1365]"
+  },
+  {
+    "worker_id": 509,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker509_dims[682:1365]"
+  },
+  {
+    "worker_id": 510,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker510_dims[682:1365]"
+  },
+  {
+    "worker_id": 511,
+    "pipe_id": 2,
+    "input_slice": [
+      682,
+      1365
+    ],
+    "output_slice": [
+      682,
+      1365
+    ],
+    "tile_shape": [
+      512,
+      512
+    ],
+    "specialization": "pipe2_worker511_dims[682:1365]"
+  }
+]

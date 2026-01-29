@@ -1,0 +1,38 @@
+{
+  "model_type": "3-pipe-parallel-architecture",
+  "version": "1.0",
+  "input_dim": 2048,
+  "output_dim": 2048,
+  "total_params": 405800448,
+  "trainable_params": 3147264,
+  "frozen_params": 402653184,
+  "pipes": {
+    "pipe1": {
+      "workers": 512,
+      "tile_shape": [
+        512,
+        512
+      ]
+    },
+    "pipe2": {
+      "workers": 512,
+      "tile_shape": [
+        512,
+        512
+      ]
+    },
+    "pipe3": {
+      "workers": 512,
+      "tile_shape": [
+        512,
+        512
+      ]
+    }
+  },
+  "training_notes": [
+    "Workers are FROZEN - trained once via least squares",
+    "Routers are TRAINABLE - learn worker selection via gradient descent",
+    "Each router operates independently",
+    "Sparse activation: 30% (154/512) workers per pipe"
+  ]
+}

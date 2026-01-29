@@ -124,7 +124,66 @@ Mark your specific blocks in modified files:
 
 Copyright (c) 2026 Ivan K (aka srose69, Simple Rose) - PolyForm Shield 1.0.0
 
-- 
+### prism/testtensors/ - PrisMoE Architecture
+
+**Core Implementation:**
+- `prism/testtensors/prismoe.py` - Main CLI entry point
+- `prism/testtensors/src/prismoe_core.py` - PrisMoE core architecture
+- `prism/testtensors/src/prism_3d_universal.py` - Universal 3D tensor decomposition
+- `prism/testtensors/src/llama_centipede_benchmark.py` - Benchmarking tools
+- `prism/testtensors/src/build_pipes.py` - 3-Pipe parallel architecture builder
+- `prism/testtensors/src/train_workers.py` - Phase 1: Worker training via least squares
+- `prism/testtensors/src/train_mmoe.py` - Phase 2: MicroMoE router training
+- `prism/testtensors/src/validate_workers.py` - Worker validation and quality assessment
+
+**Utilities:**
+- `prism/testtensors/utils/calculate_pipes.py` - Calculate 3-Pipe architecture tiling
+- `prism/testtensors/utils/extract_lm_head.py` - Extract lm_head layers from models
+- `prism/testtensors/utils/extract_embedding.py` - Extract embedding layers
+- `prism/testtensors/utils/compare_heads.py` - Compare weight matrices
+- `prism/testtensors/utils/inspect_tile.py` - Inspect tile files
+- `prism/testtensors/utils/tile_direct.py` - Direct model-to-tiles converter
+- `prism/testtensors/utils/tile_matrices.py` - File-to-tiles converter
+- `prism/testtensors/utils/visualize_3d_tensor.py` - 3D tensor visualization
+- `prism/testtensors/utils/visualize.py` - Flexible PRISM visualization tool
+- `prism/testtensors/utils/tokenistic.py` - Token mapping and comparison utilities
+- `prism/testtensors/utils/weightnistic.py` - Weight mapping and comparison utilities
+
+**Documentation (enables reverse-engineering, protected under PolyForm Shield):**
+- `prism/testtensors/README.md` - Project overview and usage guide
+- `prism/testtensors/docs/LOGIC.md` - Architecture theory and mathematical foundations
+- `prism/testtensors/docs/HOWTO.md` - Complete implementation guide with detailed explanations
+
+**⚠️ Note on Documentation:** The documentation files (README.md, LOGIC.md, HOWTO.md) contain detailed architectural descriptions, mathematical foundations, and implementation strategies that could enable reimplementation. These are protected under PolyForm Shield 1.0.0 to prevent competing products from using this information without whitelist permission.
+
+---
+
+### prism/audio/ - Audio Projection System
+
+**Core Implementation:**
+- `prism/audio/src/projector.py` - Main audio-to-LLM projector with duration prediction
+- `prism/audio/src/cross_attention.py` - Cross-attention mechanism for TTS decoder
+- `prism/audio/src/duration_predictor.py` - Duration prediction module for length regulation
+- `prism/audio/src/train_tts.py` - Complete TTS training pipeline
+- `prism/audio/src/verify_alignment.py` - Alignment verification and quality checks
+
+**Scripts:**
+- `prism/audio/scripts/preprocess_audio.py` - Audio preprocessing and mel-spectrogram extraction
+- `prism/audio/scripts/extract_llama_features.py` - LLaMA feature extraction from text
+- `prism/audio/scripts/download_models.py` - Model downloader utility
+- `prism/audio/scripts/generate_durations_mfa.py` - Duration generation with Montreal Forced Aligner
+- `prism/audio/scripts/download_dataset.py` - Dataset downloader utility
+
+**Legacy Code:**
+- `prism/audio/src/legacy/` - Legacy implementations (5 files: projector_legacy.py, train.py, inference.py, demo.py, test_full_pipeline.py)
+
+**Configuration:**
+- `prism/audio/configs/default.yaml` - Default training configuration
+
+**Documentation:**
+- `prism/audio/README.md` - Project overview and usage guide
+- `prism/audio/docs/architecture.md` - Architecture documentation
+- `prism/audio/docs/MFA_SETUP.md` - Montreal Forced Aligner setup guide
 
 ---
 
