@@ -3379,7 +3379,6 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
     int * tile_y = data_mul_mat_q + mmq_x;
     int * tile_x = tile_y + GGML_PAD(mmq_x*MMQ_TILE_Y_K, nwarps*warp_size);
     
-    // RADICAL: Device-side async gate in __shared__ memory
     __shared__ DeviceAsyncGate async_gate;
     ASYNC_GATE_INIT(async_gate);
 
@@ -3406,24 +3405,36 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
     constexpr int sz = sizeof(block_q8_1_mmq) / sizeof(int);
 
     for (int kb0 = kb0_start; kb0 < kb0_stop; kb0 += blocks_per_iter) {
+        // Aggressive prefetch Q4 N+1 and N+2 to L1/L2 BEFORE loading current tile
+        if (kb0 + blocks_per_iter < kb0_stop) {
+            const char * x_n1 = x + (offset_x + kb0 + blocks_per_iter) * sizeof(block_q4_K);
+            #pragma unroll
+            for (int pf_i = 0; pf_i < 4; ++pf_i) {
+                asm volatile("prefetch.global.L1 [%0];" :: "l"(x_n1 + pf_i * 64));
+            }
+        }
+        if (kb0 + 2*blocks_per_iter < kb0_stop) {
+            const char * x_n2 = x + (offset_x + kb0 + 2*blocks_per_iter) * sizeof(block_q4_K);
+            asm volatile("prefetch.global.L2 [%0];" :: "l"(x_n2));
+        }
+        
+        // Load Q4 from L1/L2 to shared memory
         load_tiles(x, tile_x, offset_x + kb0, tile_x_max_i, stride_row_x);
+        
         {
             const int * by0 = y + ncols_y * (kb0 * qk / ne_block) * sz;
 #pragma unroll
             for (int l0 = 0; l0 < mmq_x * MMQ_TILE_Y_K; l0 += nwarps * warp_size) {
                 int l = l0 + threadIdx.y*warp_size + threadIdx.x;
-
                 tile_y[l] = by0[l];
             }
         }
 
-        // RADICAL: Warp-level sync instead of heavy __syncthreads!
         ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
         ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
 
         vec_dot(tile_x, tile_y, sum, 0);
 
-        // RADICAL: Lightweight warp barrier (NO block-wide sync!)
         WARP_BARRIER();
 
         {
@@ -3431,18 +3442,15 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
 #pragma unroll
             for (int l0 = 0; l0 < mmq_x * MMQ_TILE_Y_K; l0 += nwarps * warp_size) {
                 int l = l0 + threadIdx.y*warp_size + threadIdx.x;
-
                 tile_y[l] = by0[l];
             }
         }
 
-        // RADICAL: Second Q8 load sync
         ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
         ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
 
         vec_dot(tile_x, tile_y, sum, MMQ_TILE_NE_K);
 
-        // RADICAL: Final warp barrier
         WARP_BARRIER();
     }
 

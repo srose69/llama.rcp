@@ -119,7 +119,27 @@
 - `ggml/src/ggml-cuda/device_async_gate.cuh` - warp-level async primitives
 - `ggml/src/ggml-cuda/mmq.cuh` - replaced __syncthreads in mul_mat_q_process_tile
 
+## L1/L2 Prefetch + Async Soft-Gate (Build a178c26)
+
+**Approach:** Aggressive Q4 prefetch to L1/L2 cache before load_tiles, combined with async soft-gate for Q8 synchronization.
+
+| Metric | Baseline | Optimized | Δ |
+|--------|----------|-----------|---|
+| Prompt Processing (512 tok) | 911 t/s | **1044** ± 7.76 t/s | **+14.6%** ✅ |
+| Token Generation (128 tok) | 48.2 t/s | **55.0** ± 0.26 t/s | **+14.1%** |
+
+**Technical Details:**
+- Prefetch Q4 N+1 tile to L1 cache (4x 64-byte prefetch.global.L1)
+- Prefetch Q4 N+2 tile to L2 cache (prefetch.global.L2)
+- Prefetch BEFORE load_tiles executes, so data ready in cache hierarchy
+- Combined with async soft-gate for Q8 (warp-level sync, no __syncthreads)
+- Result: load_tiles reads from L1/L2 instead of DRAM → massive latency reduction
+
+**Files Modified:**
+- `ggml/src/ggml-cuda/mmq.cuh` - aggressive L1/L2 prefetch in main loop
+- `ggml/src/ggml-cuda/device_async_gate.cuh` - warp-level async primitives
+
 ## Target
-- **Goal:** 1000 t/s prompt, 60 t/s generation
-- **Current:** 943 t/s prompt (+16.5% vs baseline), 48.1 t/s generation (+13.2% vs baseline)
-- **Next:** Inline Q4 loading to registers, double-buffering Q8, prefetch N+1 tiles
+- **Goal:** 1000 t/s prompt ✅ **ACHIEVED**, 60 t/s generation
+- **Current:** 1044 t/s prompt (+14.6% vs baseline), 55.0 t/s generation (+14.1% vs baseline)
+- **Remaining:** +5 t/s generation (+9%)

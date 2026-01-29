@@ -34,6 +34,8 @@ enum class AsyncStage : unsigned int {
     Q4_LOAD_DONE  = 0x1,  // Q4 data loaded to registers/shared
     Q8_LOAD_DONE  = 0x2,  // Q8 data loaded to shared
     COMPUTE_DONE  = 0x4,  // Compute phase complete
+    IDS_WRITE_DONE = 0x8, // ids_dst_shared written
+    Q4_PREFETCH_DONE = 0x10, // Q4 N+1 tile prefetched
 };
 
 // Device-side gate state (in shared memory)
