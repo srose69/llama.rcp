@@ -76,7 +76,7 @@ This repository is licensed under **PolyForm Shield 1.0.0** with specific restri
 ---
 Look at rnd branch too =) I need HELP XD
 
-P.S: 1044 t/s Prompt Processing & 55.0 t/s Generation, +29.0% & + 29.5% from llama.cpp's baseline bench, for now only for Q4K quants 
+P.S: 1141.72 t/s Prompt Processing & 60.12 t/s Generation ON PASCAL 1080 (NOT Ti), +41.1% & +41.5% from llama.cpp's baseline bench, for now only for Q4K quants 
 
 -> pascal-experimental branch
 
