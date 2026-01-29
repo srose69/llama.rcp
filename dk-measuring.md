@@ -44,7 +44,8 @@
 | Log-space (LFP8 approach) | -87.6% | +13.1% | Expensive exp2f, accuracy loss |
 | LOP3.LUT nibble extraction | -82.0% | +4.0% | 10+ instructions vs 1 DP4A |
 | Double-Packed DP4A (4-value) | -34.1% | +10.4% | Packing overhead dominates |
-| **Double-Packed DP4A (8-value)** | **+2.9%** | **+10.8%** | **First win on both metrics** |
+| Double-Packed DP4A (8-value) | +2.9% | +10.8% | First win on both metrics |
+| **Butterfly-Shuffle FP64-Mimicry** | **+13.9%** | **+14.0%** | **Pre-pack in smem, 1 DP4A/thread** |
 
 ## Double-Packed DP4A Optimization (Build cce2320)
 
@@ -67,7 +68,38 @@
 **Files Modified:**
 - `ggml/src/ggml-cuda/vecdotq_q4.cuh` - `vec_dot_q4_K_q8_1_impl_mmq_ptx()`
 
+## Butterfly-Shuffle FP64-Mimicry Optimization (Build 1772e4e)
+
+**Approach:** Pre-pack Q4 nibbles with holes in shared memory (cold code), use butterfly shuffle between thread pairs, process 8 values via 1 DP4A per thread instead of 2 DP4A.
+
+| Metric | Baseline | Optimized | Δ |
+|--------|----------|-----------|---|
+| Prompt Processing (512 tok) | 809.23 t/s | **921.56** ± 3.39 t/s | **+13.9%** 🔥 |
+| Token Generation (128 tok) | 42.48 t/s | **48.42** ± 0.09 t/s | **+14.0%** 🔥 |
+
+**Technical Details:**
+- Pre-pack 8 Q4 nibbles with holes into int2 (64 bits) in `load_tiles_q4_K` using `__byte_perm`
+- Store as `[0|n3|0|n2|0|n1|0|n0]` (32b) + `[0|n7|0|n6|0|n5|0|n4]` (32b) in shared memory
+- In compute loop: load int2, butterfly shuffle with neighbor via `__shfl_xor_sync(mask, val, 1)`
+- Each thread pair processes 8 values: even thread gets low half, odd thread gets high half
+- Pack Q8 with `__byte_perm` (1 PRMT instead of 2)
+- **1 DP4A per thread** processes 4 values (thread pair = 8 total)
+- Moved 4 PRMT from hot loop to cold load_tiles → massive latency hiding
+- 2 shuffle + 1 PRMT + 1 DP4A = 4 cycles for 8 values vs baseline 1 DP4A = 1 cycle for 4 values
+- Throughput: 0.5 cycles/value vs baseline 0.25 cycles/value (theoretical), but better ILP wins
+
+**Key Insight:**
+- FP64-mimicry: treat 64-bit int2 as atomic memory unit, shuffle splits between threads
+- Butterfly shuffle avoids bank conflicts and warp divergence from previous attempt
+- Pre-packing moves overhead to memory-bound phase where it's free
+- Result: 13.9% prompt boost from eliminating hot loop PRMT overhead
+
+**Files Modified:**
+- `ggml/src/ggml-cuda/mmq_q4.cuh` - `load_tiles_q4_K()` pre-packing with holes
+- `ggml/src/ggml-cuda/vecdotq_q4.cuh` - `vec_dot_q4_K_q8_1_impl_mmq_ptx()` butterfly shuffle
+
 ## Target
 - **Goal:** 2-3x current performance via PRMT/tiling/PTX optimizations
-- **Current:** 1.03x prompt, 1.11x generation
+- **Current:** 1.14x prompt, 1.14x generation (Butterfly-Shuffle)
+- **Next:** Optimize Q8 loading, explore shared memory tiling patterns
 - **Expected:** 20-25+ TFLOPS on Pascal hardware

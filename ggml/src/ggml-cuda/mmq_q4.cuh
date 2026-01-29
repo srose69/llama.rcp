@@ -47,15 +47,25 @@ template <int mmq_y, bool need_check> static __device__ __forceinline__ void loa
 
         const block_q4_K * bxi = (const block_q4_K *) x + kbx0 + i*stride;
         
-        // Use __ldg like STABLE - read-only data cache
+        // Load 32 bits = 8 Q4 nibbles
         const int qs0 = __ldg((const int *)&bxi->qs[txi * 4]);
 
 #if defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
         x_qs[i*MMQ_MMA_TILE_X_K_Q8_1 + 16*(txi/8) + txi % 8 + 0] = (qs0 >> 0) & 0x0F0F0F0F;
         x_qs[i*MMQ_MMA_TILE_X_K_Q8_1 + 16*(txi/8) + txi % 8 + 8] = (qs0 >> 4) & 0x0F0F0F0F;
 #else
-        // Store as-is, will unpack with __byte_perm in compute
-        x_qs[i*(MMQ_TILE_NE_K + 1) + txi] = qs0;
+        // FP64-mimicry: pre-pack 8 nibbles with holes into int2 (64 bits)
+        // Split into low/high 4 nibbles
+        const unsigned int v_lo4 = qs0 & 0x0F0F0F0F;        // [n6|n4|n2|n0]
+        const unsigned int v_hi4 = (qs0 >> 4) & 0x0F0F0F0F; // [n7|n5|n3|n1]
+        
+        // Pack with holes: [0|n3|0|n2|0|n1|0|n0] in one int32
+        const unsigned int packed_lo = __byte_perm(v_lo4, 0, 0x6420);  // Even nibbles with holes
+        const unsigned int packed_hi = __byte_perm(v_hi4, 0, 0x6420);  // Odd nibbles with holes
+        
+        // Store as int2 (64 bits) - butterfly shuffle will split between thread pairs
+        x_qs[i*(MMQ_TILE_NE_K + 1) + txi*2 + 0] = packed_lo;
+        x_qs[i*(MMQ_TILE_NE_K + 1) + txi*2 + 1] = packed_hi;
 #endif // defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
     }
 

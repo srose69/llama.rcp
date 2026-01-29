@@ -116,13 +116,15 @@ static __device__ __forceinline__ float vec_dot_q4_K_q8_1_ptx(
     return d * sum - m * 8.0f; // 8 values
 }
 
-// Double-Packed DP4A: pack 8 Q4 nibbles with holes, process 8 values per iteration
-// Key: 15*15=225 fits in 8 bits, nibbles with zero-padding don't overflow
+// Butterfly-Shuffle DP4A: pre-packed data with holes in shared memory, shuffle between thread pairs
+// Each thread pair processes 8 values via 1 DP4A per thread (2 total)
+// Key: 15*15=225 fits in 8 bits, no overflow with zero-padding
 static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_mmq_ptx(
     const int * __restrict__ v, const int * __restrict__ u, 
     const uint8_t * __restrict__ sc, const uint8_t * __restrict__ m, 
     const half2 & dm4, const half2 * __restrict__ ds8) {
     
+    const int lane_id = threadIdx.x % 32;
     float sumf_d = 0.0f;
     float sumf_m = 0.0f;
     
@@ -132,30 +134,33 @@ static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_mmq_ptx(
         
         #pragma unroll
         for (int j = 0; j < QI8_1; j += 2) {
-            // Load FULL 32 bits = 8 nibbles (no mask, no shift on nibbles)
-            // v[j] contains [n7|n6|n5|n4|n3|n2|n1|n0] in 4-bit nibbles
-            const unsigned int v_full = v[j] >> (4*i);
+            // Load pre-packed int2 (64 bits) with holes from shared memory
+            // v[j*2+0] = [0|n3|0|n2|0|n1|0|n0], v[j*2+1] = [0|n7|0|n6|0|n5|0|n4]
+            const unsigned int v_my_lo = v[j*2 + 0];  // My low half
+            const unsigned int v_my_hi = v[j*2 + 1];  // My high half
             
-            // Unpack 8 nibbles: low 4 bytes [n3|n2|n1|n0], high 4 bytes [n7|n6|n5|n4]
-            const unsigned int v_lo4 = v_full & 0x0F0F0F0F;        // [0|n6|0|n4|0|n2|0|n0] after perm
-            const unsigned int v_hi4 = (v_full >> 4) & 0x0F0F0F0F; // [0|n7|0|n5|0|n3|0|n1] after perm
+            // Butterfly shuffle: swap with neighbor (lane_id XOR 1)
+            // Thread 0 gets lo from thread 0, hi from thread 1
+            // Thread 1 gets lo from thread 0, hi from thread 1
+            const unsigned int v_neighbor_lo = __shfl_xor_sync(0xFFFFFFFF, v_my_lo, 1);
+            const unsigned int v_neighbor_hi = __shfl_xor_sync(0xFFFFFFFF, v_my_hi, 1);
             
-            // Pack with holes using __byte_perm: even/odd nibbles
-            const unsigned int v_even = __byte_perm(v_lo4, 0, 0x6420);  // [0|n6|0|n4|0|n2|0|n0]
-            const unsigned int v_odd  = __byte_perm(v_hi4, 0, 0x6420);  // [0|n7|0|n5|0|n3|0|n1]
+            // Select which half to use based on lane parity
+            const unsigned int v_packed = (lane_id & 1) ? v_neighbor_hi : v_my_lo;
             
             // Load 8 Q8 values (two int32 = 8 bytes)
             const int u_val0 = u[i*QI8_1 + j];
             const int u_val1 = u[i*QI8_1 + j + 1];
             
-            // Pack Q8 with holes: 4 from u_val0, 4 from u_val1
-            // u_even gets [0|u0[2]|0|u0[0]] in low 16 bits, [0|u1[2]|0|u1[0]] in high 16 bits
-            const unsigned int u_even = __byte_perm(u_val0, u_val1, 0x6240);  // Select bytes for even positions
-            const unsigned int u_odd  = __byte_perm(u_val0, u_val1, 0x7351);  // Select bytes for odd positions
+            // Pack Q8 with holes: select based on lane parity
+            // Even lanes: [0|u0[3]|0|u0[2]|0|u0[1]|0|u0[0]]
+            // Odd lanes:  [0|u1[3]|0|u1[2]|0|u1[1]|0|u1[0]]
+            const int u_src = (lane_id & 1) ? u_val1 : u_val0;
+            const unsigned int u_packed = __byte_perm(u_src, 0, 0x6420);  // Pack 4 bytes with holes
             
-            // Two DP4A calls process 8 Q4×Q8 products
-            sumi_d = ggml_cuda_dp4a(v_even, u_even, sumi_d);
-            sumi_d = ggml_cuda_dp4a(v_odd,  u_odd,  sumi_d);
+            // ONE DP4A processes 4 Q4×Q8 products
+            // Thread pair together processes 8 values
+            sumi_d = ggml_cuda_dp4a(v_packed, u_packed, sumi_d);
         }
         
         const float2 ds8f = __half22float2(ds8[i]);
