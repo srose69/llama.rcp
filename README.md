@@ -75,6 +75,7 @@ This repository is licensed under **PolyForm Shield 1.0.0** with specific restri
 
 ---
 Look at rnd branch too =) I need HELP XD
+
 P.S: 921 t/s Prompt Processing & 48.4 t/s Generation, +13.9% & + 14% from llapa.cpp's baseline bench, for now only for Q4K quants 
 -> pascal-experimental branch
 
