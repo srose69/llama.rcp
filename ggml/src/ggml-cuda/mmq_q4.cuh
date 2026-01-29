@@ -47,8 +47,19 @@ template <int mmq_y, bool need_check> static __device__ __forceinline__ void loa
 
         const block_q4_K * bxi = (const block_q4_K *) x + kbx0 + i*stride;
         
-        // Load 32 bits = 8 Q4 nibbles
-        const int qs0 = __ldg((const int *)&bxi->qs[txi * 4]);
+        // Prefetch N+1 and N+2 tiles to L1/L2 cache
+        if (i0 + nrows*nwarps < mmq_y) {
+            const block_q4_K * bxi_next = bxi + nrows*nwarps*stride;
+            asm volatile("prefetch.global.L1 [%0];" :: "l"(&bxi_next->qs[txi * 4]));
+        }
+        if (i0 + 2*nrows*nwarps < mmq_y) {
+            const block_q4_K * bxi_next2 = bxi + 2*nrows*nwarps*stride;
+            asm volatile("prefetch.global.L2 [%0];" :: "l"(&bxi_next2->qs[txi * 4]));
+        }
+        
+        // Load with cache-at-all-levels hint (data reused across warps)
+        int qs0;
+        asm volatile("ld.global.cg.s32 %0, [%1];" : "=r"(qs0) : "l"(&bxi->qs[txi * 4]));
 
 #if defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
         x_qs[i*MMQ_MMA_TILE_X_K_Q8_1 + 16*(txi/8) + txi % 8 + 0] = (qs0 >> 0) & 0x0F0F0F0F;

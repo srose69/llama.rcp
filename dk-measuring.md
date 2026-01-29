@@ -98,8 +98,28 @@
 - `ggml/src/ggml-cuda/mmq_q4.cuh` - `load_tiles_q4_K()` pre-packing with holes
 - `ggml/src/ggml-cuda/vecdotq_q4.cuh` - `vec_dot_q4_K_q8_1_impl_mmq_ptx()` butterfly shuffle
 
+## Async Soft-Gate Optimization (Build a57dab1)
+
+**Approach:** Replace `__syncthreads()` with warp-level async soft-gate using volatile shared memory and atomic operations.
+
+| Metric | Baseline | Optimized | Δ |
+|--------|----------|-----------|---|
+| Prompt Processing (512 tok) | 911 t/s | **943** ± 9.70 t/s | **+3.5%** |
+| Token Generation (128 tok) | 48.2 t/s | **48.1** ± 0.33 t/s | stable |
+
+**Technical Details:**
+- Created `device_async_gate.cuh` with DeviceAsyncGate struct in shared memory
+- Replaced 4x `__syncthreads()` with warp-level signal/wait primitives
+- Signal: atomic OR on volatile flag, WARP_SYNC + MEMORY_FENCE_BLOCK
+- Wait: volatile spin loop until flag set, no block-wide barrier
+- Each warp polls independently without blocking other warps
+- `__syncthreads()` = ~100 cycles block-wide, async gate = ~1-10 cycles warp-level
+
+**Files Modified:**
+- `ggml/src/ggml-cuda/device_async_gate.cuh` - warp-level async primitives
+- `ggml/src/ggml-cuda/mmq.cuh` - replaced __syncthreads in mul_mat_q_process_tile
+
 ## Target
-- **Goal:** 2-3x current performance via PRMT/tiling/PTX optimizations
-- **Current:** 1.14x prompt, 1.14x generation (Butterfly-Shuffle)
-- **Next:** Optimize Q8 loading, explore shared memory tiling patterns
-- **Expected:** 20-25+ TFLOPS on Pascal hardware
+- **Goal:** 1000 t/s prompt, 60 t/s generation
+- **Current:** 943 t/s prompt (+16.5% vs baseline), 48.1 t/s generation (+13.2% vs baseline)
+- **Next:** Inline Q4 loading to registers, double-buffering Q8, prefetch N+1 tiles

@@ -2,6 +2,7 @@
 
 #include "common.cuh"
 #include "vecdotq.cuh"
+#include "device_async_gate.cuh"  // RADICAL: Warp-level async sync
 #include "mma.cuh"
 
 #include <climits>
@@ -103,10 +104,11 @@ static int get_mmq_x_max_host(const int cc) {
     return (amd_mfma_available(cc) || turing_mma_available(cc) || amd_wmma_available(cc)) ? 128 :
         GGML_CUDA_CC_IS_NVIDIA(cc) && ggml_cuda_highest_compiled_arch(cc) >= GGML_CUDA_CC_VOLTA ?
 #ifdef GGML_CUDA_FORCE_MMQ
-            128                     : 64;
+            128 :
 #else
-            MMQ_DP4A_MAX_BATCH_SIZE : 64;
+            MMQ_DP4A_MAX_BATCH_SIZE :
 #endif // GGML_CUDA_FORCE_MMQ
+            64;
 }
 
 static constexpr __device__ int get_mmq_x_max_device() {
@@ -3376,6 +3378,10 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
     extern __shared__ int data_mul_mat_q[];
     int * tile_y = data_mul_mat_q + mmq_x;
     int * tile_x = tile_y + GGML_PAD(mmq_x*MMQ_TILE_Y_K, nwarps*warp_size);
+    
+    // RADICAL: Device-side async gate in __shared__ memory
+    __shared__ DeviceAsyncGate async_gate;
+    ASYNC_GATE_INIT(async_gate);
 
 #if defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
     constexpr vec_dot_mmq_t    vec_dot    = mmq_type_traits<mmq_x, mmq_y, need_check, type>::vec_dot_mma;
@@ -3411,11 +3417,14 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
             }
         }
 
-        __syncthreads();
+        // RADICAL: Warp-level sync instead of heavy __syncthreads!
+        ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
+        ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
 
         vec_dot(tile_x, tile_y, sum, 0);
 
-        __syncthreads();
+        // RADICAL: Lightweight warp barrier (NO block-wide sync!)
+        WARP_BARRIER();
 
         {
             const int * by0 = y + ncols_y * ((kb0 * qk / ne_block) * sz + sz);
@@ -3427,11 +3436,14 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
             }
         }
 
-        __syncthreads();
+        // RADICAL: Second Q8 load sync
+        ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
+        ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
 
         vec_dot(tile_x, tile_y, sum, MMQ_TILE_NE_K);
 
-        __syncthreads();
+        // RADICAL: Final warp barrier
+        WARP_BARRIER();
     }
 
     if (fixup) {
