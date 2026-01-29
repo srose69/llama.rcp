@@ -172,7 +172,7 @@ Text → LLM Encoder (frozen) → Audio Projector (trainable) → TTS Decoder (f
 - 🔄 Quality optimization in progress
 - 📋 End-to-end inference pipeline planned
 
-**See:** [`prism/README.md`](prism/README.md) for detailed documentation
+**See:** [`prism/audio/README.md`](prism/audio/README.md) for detailed documentation
 
 ---
 
