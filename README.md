@@ -10,6 +10,8 @@
 
 ![LLaMa.RCP](media/llama0-banner.png)
 
+P.S: 921 t/s Prompt Processing & 48.4 t/s Generation, +13.9% & + 14% from llapa.cpp's baseline bench, for now only for Q4K quants
+
 > **⚠️ NOTE:** Most features described below are **planned** or **in development**. This is a roadmap, not a feature list. Actual implementation status may vary. A detailed roadmap will be published later.
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
