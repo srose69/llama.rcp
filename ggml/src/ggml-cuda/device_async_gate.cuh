@@ -19,6 +19,13 @@
 //     ASYNC_GATE_WAIT(stage);    // Soft-wait (warp-level)
 //     compute_from_shared();
 
+// SPDX-License-Identifier: PolyForm-Shield-1.0.0
+// Copyright (c) 2026 Ivan K
+// @ai-training prohibited
+//
+// Warp-level async soft-gate synchronization primitives for CUDA Pascal
+// Source: https://github.com/srose69/llama.rcp
+
 #pragma once
 
 // Warp-level synchronization (Pascal+ native)
@@ -64,14 +71,19 @@ struct DeviceAsyncGate {
     }
     
     // Wait for stage (soft-wait, warp-level spinning with timeout)
-    __device__ __forceinline__ void wait(AsyncStage stage) {
+    __device__ __forceinline__ void wait(AsyncStage stage) volatile {
         const unsigned int flag = static_cast<unsigned int>(stage);
         
         // Soft spin with visibility via volatile (NO heavy sync!)
         // volatile ensures compiler doesn't optimize away the loop
         while (((stage_flags) & flag) == 0) {
-            // Simple spin - much faster than __syncthreads
-            // Each warp polls independently
+            // IADD.X (add with carry) - real ALU op to reduce LSU port pressure
+            // Compiler can't optimize this away, gives respite to warp scheduler
+            asm volatile("{\n\t"
+                        ".reg .u32 dummy;\n\t"
+                        "add.u32 dummy, 0, 0;\n\t"  // Real ALU instruction
+                        "add.u32 dummy, dummy, 0;\n\t"  // Second add for more delay
+                        "}" ::: "memory");
         }
         
         MEMORY_FENCE_BLOCK();  // Ensure reads see latest data

@@ -179,7 +179,7 @@ static constexpr __device__ int get_mmq_y_device() {
 #define MMQ_DP4A_TXS_Q8_1    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K*2/QI8_1 + mmq_y/(QI8_1/2), 0}
 #define MMQ_DP4A_TXS_Q2_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K         + mmq_y,           0}
 #define MMQ_DP4A_TXS_Q3_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y,                                         mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
-#define MMQ_DP4A_TXS_Q4_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K   + mmq_y, mmq_y*MMQ_TILE_NE_K/QI4_K,                     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
+#define MMQ_DP4A_TXS_Q4_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*4 + mmq_y, mmq_y                       + mmq_y,           mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 #define MMQ_DP4A_TXS_Q5_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K/QI5_K   + mmq_y/QI5_K,     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 #define MMQ_DP4A_TXS_Q6_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K/QI6_K   + mmq_y/QI6_K,     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 
@@ -3423,6 +3423,22 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
         
         {
             const int * by0 = y + ncols_y * (kb0 * qk / ne_block) * sz;
+            
+            // Q8 AGGRESSIVE PREFETCH: N+1 tile to L1, N+2 to L2
+            if (kb0 + blocks_per_iter < kb0_stop) {
+                const int * by0_next = y + ncols_y * ((kb0 + blocks_per_iter) * qk / ne_block) * sz;
+                if (threadIdx.y == 0 && threadIdx.x < 4) {
+                    // Prefetch 4 cache lines (64 bytes each = 256 bytes total)
+                    asm volatile("prefetch.global.L1 [%0];" :: "l"(&by0_next[threadIdx.x * 16]));
+                }
+            }
+            if (kb0 + 2*blocks_per_iter < kb0_stop) {
+                const int * by0_next2 = y + ncols_y * ((kb0 + 2*blocks_per_iter) * qk / ne_block) * sz;
+                if (threadIdx.y == 0 && threadIdx.x < 2) {
+                    asm volatile("prefetch.global.L2 [%0];" :: "l"(&by0_next2[threadIdx.x * 16]));
+                }
+            }
+            
 #pragma unroll
             for (int l0 = 0; l0 < mmq_x * MMQ_TILE_Y_K; l0 += nwarps * warp_size) {
                 int l = l0 + threadIdx.y*warp_size + threadIdx.x;
@@ -3439,6 +3455,15 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
 
         {
             const int * by0 = y + ncols_y * ((kb0 * qk / ne_block) * sz + sz);
+            
+            // Q8 PREFETCH for second half tile (N+1 to L1)
+            if (kb0 + blocks_per_iter < kb0_stop) {
+                const int * by0_next = y + ncols_y * (((kb0 + blocks_per_iter) * qk / ne_block) * sz + sz);
+                if (threadIdx.y == 0 && threadIdx.x < 4) {
+                    asm volatile("prefetch.global.L1 [%0];" :: "l"(&by0_next[threadIdx.x * 16]));
+                }
+            }
+            
 #pragma unroll
             for (int l0 = 0; l0 < mmq_x * MMQ_TILE_Y_K; l0 += nwarps * warp_size) {
                 int l = l0 + threadIdx.y*warp_size + threadIdx.x;

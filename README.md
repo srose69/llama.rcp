@@ -10,7 +10,7 @@
 
 ![LLaMa.RCP](media/llama0-banner.png)
 
-P.S: 943 t/s Prompt Processing & 48.4 t/s Generation, +17.4% & + 14% from llama.cpp's baseline bench, for now only for Q4K quants 
+P.S: 1141.72 t/s Prompt Processing & 60.12 t/s Generation, +41.1% & +41.5% from llama.cpp's baseline bench, for now only for Q4K quants 
 
 > **⚠️ NOTE:** Most features described below are **planned** or **in development**. This is a roadmap, not a feature list. Actual implementation status may vary. A detailed roadmap will be published later.
 

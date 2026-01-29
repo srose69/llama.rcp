@@ -34,14 +34,32 @@ llamarcp-wrapper/__pycache__/
 .vscode/
 .idea/
 .windsurf/
-*.swp
-*.swo
 *~
 
 # Temporary files
 *.log
+*.dot
 *.tmp
 .DS_Store
+.build/
+.cache/
+.gradle/
+.vscode/
+.vs/
+CMakeSettings.json
+
+# SASS/PTX analysis dumps
+raw/
+*.sass
+*.ptx
+*_sass.txt
+*_hex.txt
+*_sass_hex.txt
+
+# Temporary analysis files
+analysis.md
 
 # Internal documentation (not for public repo)
 docs/responses-api/
+expr-srcs/
+ggufs/

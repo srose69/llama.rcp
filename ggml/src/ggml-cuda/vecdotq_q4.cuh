@@ -134,14 +134,17 @@ static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_mmq_ptx(
         
         #pragma unroll
         for (int j = 0; j < QI8_1; j += 2) {
-            // Load pre-packed int2 (64 bits) with holes from shared memory
-            // v[j*2+0] = [0|n3|0|n2|0|n1|0|n0], v[j*2+1] = [0|n7|0|n6|0|n5|0|n4]
-            const unsigned int v_my_lo = v[j*2 + 0];  // My low half
-            const unsigned int v_my_hi = v[j*2 + 1];  // My high half
+            // ZERO-COST UNPACKING: lo/hi nibbles stored in SEPARATE banks by load_tiles
+            // No SHR+AND here - just LDS from different offsets
+            // Layout: v[0..bank_stride-1] = lo nibbles, v[bank_stride..2*bank_stride-1] = hi nibbles
+            constexpr int bank_stride = (MMQ_TILE_NE_K + 1);
+            
+            // Load lo nibbles (already packed with holes)
+            const unsigned int v_my_lo = v[j*2 + 0];  // Lo bank
+            // Load hi nibbles from offset bank (already packed with holes)
+            const unsigned int v_my_hi = v[bank_stride + j*2 + 0];  // Hi bank
             
             // Butterfly shuffle: swap with neighbor (lane_id XOR 1)
-            // Thread 0 gets lo from thread 0, hi from thread 1
-            // Thread 1 gets lo from thread 0, hi from thread 1
             const unsigned int v_neighbor_lo = __shfl_xor_sync(0xFFFFFFFF, v_my_lo, 1);
             const unsigned int v_neighbor_hi = __shfl_xor_sync(0xFFFFFFFF, v_my_hi, 1);
             
@@ -159,7 +162,7 @@ static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_mmq_ptx(
             const unsigned int u_packed = __byte_perm(u_src, 0, 0x6420);  // Pack 4 bytes with holes
             
             // ONE DP4A processes 4 Q4×Q8 products
-            // Thread pair together processes 8 values
+            // ZERO ALU overhead before DP4A (no SHR+AND)
             sumi_d = ggml_cuda_dp4a(v_packed, u_packed, sumi_d);
         }
         

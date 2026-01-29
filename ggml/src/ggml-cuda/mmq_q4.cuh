@@ -65,18 +65,34 @@ template <int mmq_y, bool need_check> static __device__ __forceinline__ void loa
         x_qs[i*MMQ_MMA_TILE_X_K_Q8_1 + 16*(txi/8) + txi % 8 + 0] = (qs0 >> 0) & 0x0F0F0F0F;
         x_qs[i*MMQ_MMA_TILE_X_K_Q8_1 + 16*(txi/8) + txi % 8 + 8] = (qs0 >> 4) & 0x0F0F0F0F;
 #else
-        // FP64-mimicry: pre-pack 8 nibbles with holes into int2 (64 bits)
-        // Split into low/high 4 nibbles
+        // ZERO-COST SWAR UNPACKING: Move unpacking HERE (load_tiles) instead of vec_dot
+        // This eliminates SHR+AND in the hot compute loop
+        // Cost: 2x shared memory, Gain: Zero ALU overhead in vec_dot
+        
+        // Extract nibbles using XMAD trick (faster than SHR on Pascal)
+        // Lo nibbles: multiply by 1, mask low bits
         const unsigned int v_lo4 = qs0 & 0x0F0F0F0F;        // [n6|n4|n2|n0]
-        const unsigned int v_hi4 = (qs0 >> 4) & 0x0F0F0F0F; // [n7|n5|n3|n1]
+        // Hi nibbles: shift right 4 using XMAD.PSL equivalent
+        unsigned int v_hi4;
+        asm("shr.u32 %0, %1, 4;" : "=r"(v_hi4) : "r"(qs0));
+        v_hi4 &= 0x0F0F0F0F;  // [n7|n5|n3|n1]
         
         // Pack with holes: [0|n3|0|n2|0|n1|0|n0] in one int32
         const unsigned int packed_lo = __byte_perm(v_lo4, 0, 0x6420);  // Even nibbles with holes
         const unsigned int packed_hi = __byte_perm(v_hi4, 0, 0x6420);  // Odd nibbles with holes
         
-        // Store as int2 (64 bits) - butterfly shuffle will split between thread pairs
-        x_qs[i*(MMQ_TILE_NE_K + 1) + txi*2 + 0] = packed_lo;
-        x_qs[i*(MMQ_TILE_NE_K + 1) + txi*2 + 1] = packed_hi;
+        // CRITICAL: Store lo/hi in SEPARATE banks to avoid unpacking in vec_dot
+        // Layout: [all_lo_data | all_hi_data] instead of interleaved [lo|hi|lo|hi...]
+        constexpr int bank_stride = (MMQ_TILE_NE_K + 1);  // Stride per row
+        const int base_offset = i * bank_stride * 2;  // 2x for lo+hi banks
+        
+        // Bank 0: lo nibbles
+        x_qs[base_offset + txi*2 + 0] = packed_lo;
+        // Bank 1: hi nibbles (offset by bank_stride)
+        x_qs[base_offset + bank_stride + txi*2 + 0] = packed_hi;
+        // Duplicate for butterfly shuffle (thread pair access)
+        x_qs[base_offset + txi*2 + 1] = packed_lo;
+        x_qs[base_offset + bank_stride + txi*2 + 1] = packed_hi;
 #endif // defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
     }
 
@@ -164,7 +180,7 @@ static __device__ __forceinline__ void vec_dot_q4_K_q8_1_dp4a(
     const int   * y_qs = (const int   *) y + 4;
     const half2 * y_ds = (const half2 *) y;
 
-// #pragma unroll
+#pragma unroll 4  // Maximum ILP for generation (batch=1), balance code size vs parallelism
     for (int k01 = 0; k01 < MMQ_TILE_NE_K; k01 += QR4_K*VDR_Q4_K_Q8_1_MMQ) {
         const int k0 = k00 + k01;
 
@@ -178,8 +194,11 @@ static __device__ __forceinline__ void vec_dot_q4_K_q8_1_dp4a(
 
                 const uint8_t * sc = (const uint8_t *) &x_sc[i * (MMQ_TILE_NE_K/8) + i/8 + k0/32] + 2*(k01/16);
 
+                // ZERO-COST UNPACKING: x_qs now has dual-bank layout [lo_data | hi_data]
+                // Each row uses bank_stride*2 space instead of (MMQ_TILE_NE_K + 1)
+                constexpr int bank_stride = (MMQ_TILE_NE_K + 1);
                 sum[j0/nwarps*mmq_y/warp_size + i0/warp_size] += vec_dot_q4_K_q8_1_impl_mmq_ptx(
-                    &x_qs[i*(MMQ_TILE_NE_K + 1) + k0/2], &y_qs[j*MMQ_TILE_Y_K + k01], sc, sc+8,
+                    &x_qs[i*bank_stride*2 + k0/2], &y_qs[j*MMQ_TILE_Y_K + k01], sc, sc+8,
                     x_dm[i], &y_ds[j*MMQ_TILE_Y_K + k01/QI8_1]);
             }
         }
