@@ -129,6 +129,7 @@ Copyright (c) 2026 Ivan K (aka srose69, Simple Rose) - PolyForm Shield 1.0.0
 - `ggml/src/ggml-cuda/mmq.cuh` - Q4/Q8 aggressive L1/L2 prefetch, async gate integration
 - `ggml/src/ggml-cuda/mmq_q4.cuh` - Zero-Cost SWAR unpacking (dual-bank shared memory layout)
 - `ggml/src/ggml-cuda/vecdotq_q4.cuh` - PTX-optimized vec_dot with separate lo/hi bank loads
+- `ggml/src/ggml-cuda/mmvq_ptx.cuh` 
 - `README.md` - Performance metrics update
 - `.gitignore` - Analysis artifacts exclusion
 
