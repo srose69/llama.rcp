@@ -179,7 +179,7 @@ static constexpr __device__ int get_mmq_y_device() {
 #define MMQ_DP4A_TXS_Q8_1    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K*2/QI8_1 + mmq_y/(QI8_1/2), 0}
 #define MMQ_DP4A_TXS_Q2_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K         + mmq_y,           0}
 #define MMQ_DP4A_TXS_Q3_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y,                                         mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
-#define MMQ_DP4A_TXS_Q4_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*4 + mmq_y, mmq_y                       + mmq_y,           mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
+#define MMQ_DP4A_TXS_Q4_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K   + mmq_y, mmq_y*MMQ_TILE_NE_K/QI4_K   + mmq_y/QI4_K,     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 #define MMQ_DP4A_TXS_Q5_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K/QI5_K   + mmq_y/QI5_K,     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 #define MMQ_DP4A_TXS_Q6_K    tile_x_sizes{mmq_y*MMQ_TILE_NE_K*2 + mmq_y, mmq_y*MMQ_TILE_NE_K/QI6_K   + mmq_y/QI6_K,     mmq_y*MMQ_TILE_NE_K/8 + mmq_y/8}
 
@@ -3379,7 +3379,8 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
     int * tile_y = data_mul_mat_q + mmq_x;
     int * tile_x = tile_y + GGML_PAD(mmq_x*MMQ_TILE_Y_K, nwarps*warp_size);
     
-    __shared__ DeviceAsyncGate async_gate;
+    // Async soft-gate: faster than __syncthreads() on Pascal
+    __shared__ DeviceAsyncGate<nwarps> async_gate;
     ASYNC_GATE_INIT(async_gate);
 
 #if defined(AMD_MFMA_AVAILABLE) || defined(TURING_MMA_AVAILABLE) || defined(AMD_WMMA_AVAILABLE)
@@ -3446,12 +3447,11 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
             }
         }
 
-        ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
-        ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
+        ASYNC_GATE_BARRIER(async_gate);
 
         vec_dot(tile_x, tile_y, sum, 0);
 
-        WARP_BARRIER();
+        ASYNC_GATE_BARRIER(async_gate);
 
         {
             const int * by0 = y + ncols_y * ((kb0 * qk / ne_block) * sz + sz);
@@ -3471,12 +3471,11 @@ static __device__ __forceinline__ void mul_mat_q_process_tile(
             }
         }
 
-        ASYNC_GATE_SIGNAL(async_gate, Q8_LOAD_DONE);
-        ASYNC_GATE_WAIT(async_gate, Q8_LOAD_DONE);
+        ASYNC_GATE_BARRIER(async_gate);
 
         vec_dot(tile_x, tile_y, sum, MMQ_TILE_NE_K);
 
-        WARP_BARRIER();
+        ASYNC_GATE_BARRIER(async_gate);
     }
 
     if (fixup) {

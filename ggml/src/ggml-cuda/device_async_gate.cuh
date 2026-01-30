@@ -47,61 +47,58 @@ enum class AsyncStage : unsigned int {
 
 // Device-side gate state (in shared memory)
 // MUST be placed in __shared__ memory by caller
+// Sense-reversing barrier: avoids deadlock on counter reset
+template<int NWARPS>
 struct DeviceAsyncGate {
-    volatile unsigned int stage_flags;  // VOLATILE for visibility across threads
+    volatile unsigned int warp_counter;  // Count of warps that reached barrier
+    volatile unsigned int sense;         // Sense flag for barrier phase
     
     __device__ __forceinline__ void init() {
-        // Single thread initializes
         if (threadIdx.x == 0 && threadIdx.y == 0) {
-            stage_flags = 0;
+            warp_counter = 0;
+            sense = 0;
         }
-        __syncthreads();  // MUST use full sync for init
+        __syncwarp();
+        __threadfence_block();
     }
     
-    // Signal stage completion (warp-level)
-    __device__ __forceinline__ void signal(AsyncStage stage) {
-        WARP_SYNC();  // Ensure warp finished its work
-        MEMORY_FENCE_BLOCK();  // Make writes visible
+    // Barrier: wait for ALL warps to reach this point
+    // Sense-reversing pattern: safe reset without deadlock
+    __device__ __forceinline__ void barrier() {
+        __syncwarp();  // Sync within warp first
+        __threadfence_block();  // Make writes visible
         
-        // First thread in warp sets flag (atomic OR)
-        if ((threadIdx.x % 32) == 0) {
-            atomicOr((unsigned int*)&stage_flags, static_cast<unsigned int>(stage));
+        // Read current sense
+        const unsigned int my_sense = sense;
+        
+        // Lane 0 of each warp increments counter
+        unsigned int arrived = 0;
+        if ((threadIdx.x & 31) == 0) {
+            arrived = atomicAdd((unsigned int*)&warp_counter, 1) + 1;
         }
-        WARP_SYNC();  // Ensure flag written
-    }
-    
-    // Wait for stage (soft-wait, warp-level spinning with timeout)
-    __device__ __forceinline__ void wait(AsyncStage stage) volatile {
-        const unsigned int flag = static_cast<unsigned int>(stage);
+        // Broadcast arrived to all lanes in warp
+        arrived = __shfl_sync(0xFFFFFFFF, arrived, 0);
         
-        // Soft spin with visibility via volatile (NO heavy sync!)
-        // volatile ensures compiler doesn't optimize away the loop
-        while (((stage_flags) & flag) == 0) {
-            // IADD.X (add with carry) - real ALU op to reduce LSU port pressure
-            // Compiler can't optimize this away, gives respite to warp scheduler
-            asm volatile("{\n\t"
-                        ".reg .u32 dummy;\n\t"
-                        "add.u32 dummy, 0, 0;\n\t"  // Real ALU instruction
-                        "add.u32 dummy, dummy, 0;\n\t"  // Second add for more delay
-                        "}" ::: "memory");
+        if (arrived == NWARPS) {
+            // Last warp: reset counter and flip sense
+            warp_counter = 0;
+            __threadfence_block();
+            sense = 1 - my_sense;  // Flip sense to release waiters
+        } else {
+            // Wait for sense to flip
+            while (sense == my_sense) {
+                asm volatile("" ::: "memory");
+            }
         }
         
-        MEMORY_FENCE_BLOCK();  // Ensure reads see latest data
-        WARP_SYNC();  // Ensure all threads in warp see it
-    }
-    
-    // Check if stage ready (non-blocking)
-    __device__ __forceinline__ bool is_ready(AsyncStage stage) const {
-        const unsigned int flag = static_cast<unsigned int>(stage);
-        return ((stage_flags) & flag) != 0;
+        __threadfence_block();
+        __syncwarp();
     }
 };
 
 // MACRO API for easy usage
 #define ASYNC_GATE_INIT(gate) (gate).init()
-#define ASYNC_GATE_SIGNAL(gate, stage) (gate).signal(AsyncStage::stage)
-#define ASYNC_GATE_WAIT(gate, stage) (gate).wait(AsyncStage::stage)
-#define ASYNC_GATE_READY(gate, stage) (gate).is_ready(AsyncStage::stage)
+#define ASYNC_GATE_BARRIER(gate) (gate).barrier()
 
 // LIGHTWEIGHT BARRIER: Replace __syncthreads with warp-level sync
 // Use ONLY when warps can proceed independently

@@ -124,7 +124,14 @@ Mark your specific blocks in modified files:
 
 Copyright (c) 2026 Ivan K (aka srose69, Simple Rose) - PolyForm Shield 1.0.0
 
-- 
+**Pascal GPU Optimizations (60.12 t/s achievement):**
+- `ggml/src/ggml-cuda/device_async_gate.cuh` - Warp-level async soft-gate synchronization primitives
+- `ggml/src/ggml-cuda/mmq.cuh` - Q4/Q8 aggressive L1/L2 prefetch, async gate integration
+- `ggml/src/ggml-cuda/mmq_q4.cuh` - Zero-Cost SWAR unpacking (dual-bank shared memory layout)
+- `ggml/src/ggml-cuda/vecdotq_q4.cuh` - PTX-optimized vec_dot with separate lo/hi bank loads
+- `README.md` - Performance metrics update
+- `.gitignore` - Analysis artifacts exclusion
+
 
 ---
 
