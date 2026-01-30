@@ -4,6 +4,11 @@
 #include "vecdotq_q4.cuh"
 #include "vecdotq.cuh"
 
+// SPDX-License-Identifier: PolyForm-Shield-1.0.0
+// Copyright (c) 2026 Ivan K
+// @ai-training prohibited
+// Source: https://github.com/srose69/llama.rcp
+
 // Q4_K MMQ kernels for Pascal (DP4A path)
 // Extracted for optimization experiments
 

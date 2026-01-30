@@ -115,9 +115,334 @@ int ggml_cuda_get_device() {
     return id;
 }
 
+// VMM buffer pool for lazy chunked allocation (per-device singleton)
+// Reserves virtual address space upfront, maps physical memory in chunks on demand
+#if defined(GGML_USE_VMM)
+struct ggml_cuda_vmm_lazy_buffer {
+    CUdeviceptr base_addr = 0;
+    size_t virtual_size = 0;      // Total virtual space reserved
+    size_t committed_size = 0;    // Physical memory actually mapped
+    size_t granularity = 0;
+    int device = -1;
+    std::vector<CUmemGenericAllocationHandle> handles;
+    
+    static constexpr size_t CHUNK_SIZE = 512ull * 1024 * 1024; // 512 MB chunks
+    static constexpr size_t VMM_BUFFER_MAX_SIZE = 1ull << 34;  // 16 GB max
+    
+    bool init(int dev, size_t size) {
+        if (base_addr != 0) return true; // already initialized
+        device = dev;
+        granularity = ggml_cuda_info().devices[dev].vmm_granularity;
+        
+        if (granularity == 0) {
+            GGML_LOG_WARN("VMM lazy buffer: granularity is 0, VMM not supported\n");
+            return false;
+        }
+        
+        // Round up to granularity
+        virtual_size = granularity * ((size + granularity - 1) / granularity);
+        if (virtual_size > VMM_BUFFER_MAX_SIZE) virtual_size = VMM_BUFFER_MAX_SIZE;
+        
+        GGML_LOG_INFO("VMM lazy buffer: init dev=%d size=%zu granularity=%zu virtual_size=%zu\n",
+                      dev, size, granularity, virtual_size);
+        
+        // Reserve virtual address space (no physical memory yet!)
+        CUresult res = cuMemAddressReserve(&base_addr, virtual_size, granularity, 0, 0);
+        if (res != CUDA_SUCCESS) {
+            GGML_LOG_WARN("VMM lazy buffer: cuMemAddressReserve failed (res=%d) for %zu MB\n", 
+                          (int)res, virtual_size / 1024 / 1024);
+            return false;
+        }
+        
+        GGML_LOG_INFO("VMM lazy buffer: reserved at %p\n", (void*)base_addr);
+        
+        // Map initial chunk (or full size if smaller than chunk)
+        size_t initial_commit = (size < CHUNK_SIZE) ? size : CHUNK_SIZE;
+        initial_commit = granularity * ((initial_commit + granularity - 1) / granularity);
+        
+        if (!ensure_committed(initial_commit)) {
+            cuMemAddressFree(base_addr, virtual_size);
+            base_addr = 0;
+            return false;
+        }
+        
+        GGML_LOG_INFO("VMM lazy buffer[%d]: reserved %zu MB virtual, committed %zu MB initial\n", 
+                      device, virtual_size / 1024 / 1024, committed_size / 1024 / 1024);
+        return true;
+    }
+    
+    // Ensure at least 'needed' bytes are physically mapped
+    bool ensure_committed(size_t needed) {
+        if (needed <= committed_size) return true;
+        if (needed > virtual_size) {
+            GGML_LOG_ERROR("VMM lazy buffer: requested %zu MB exceeds virtual size %zu MB\n",
+                           needed / 1024 / 1024, virtual_size / 1024 / 1024);
+            return false;
+        }
+        
+        // Round up to chunk size
+        size_t target = ((needed + CHUNK_SIZE - 1) / CHUNK_SIZE) * CHUNK_SIZE;
+        if (target > virtual_size) target = virtual_size;
+        
+        size_t to_commit = target - committed_size;
+        
+        // Allocate physical memory for new chunk
+        CUmemAllocationProp prop = {};
+        prop.type = CU_MEM_ALLOCATION_TYPE_PINNED;
+        prop.location.type = CU_MEM_LOCATION_TYPE_DEVICE;
+        prop.location.id = device;
+        
+        CUmemGenericAllocationHandle handle;
+        CUresult res = cuMemCreate(&handle, to_commit, &prop, 0);
+        if (res != CUDA_SUCCESS) {
+            GGML_LOG_ERROR("VMM lazy buffer: cuMemCreate failed for %zu MB\n", to_commit / 1024 / 1024);
+            return false;
+        }
+        
+        // Map at end of committed region
+        CUdeviceptr map_addr = base_addr + committed_size;
+        res = cuMemMap(map_addr, to_commit, 0, handle, 0);
+        if (res != CUDA_SUCCESS) {
+            cuMemRelease(handle);
+            GGML_LOG_ERROR("VMM lazy buffer: cuMemMap failed\n");
+            return false;
+        }
+        
+        // Set access permissions
+        CUmemAccessDesc access = {};
+        access.location.type = CU_MEM_LOCATION_TYPE_DEVICE;
+        access.location.id = device;
+        access.flags = CU_MEM_ACCESS_FLAGS_PROT_READWRITE;
+        cuMemSetAccess(map_addr, to_commit, &access, 1);
+        
+        handles.push_back(handle);
+        committed_size = target;
+        
+        GGML_LOG_INFO("VMM lazy buffer[%d]: expanded to %zu MB committed\n",
+                      device, committed_size / 1024 / 1024);
+        return true;
+    }
+    
+    void * get_ptr() { return (void*)base_addr; }
+    size_t get_committed() { return committed_size; }
+    
+    ~ggml_cuda_vmm_lazy_buffer() {
+        if (base_addr != 0) {
+            cuMemUnmap(base_addr, committed_size);
+            for (auto & h : handles) {
+                cuMemRelease(h);
+            }
+            cuMemAddressFree(base_addr, virtual_size);
+        }
+    }
+};
+
+// Legacy VMM buffer pool (allocates all at once)
+struct ggml_cuda_vmm_buffer_pool {
+    CUdeviceptr base_addr = 0;
+    size_t reserved_size = 0;
+    size_t committed_size = 0;
+    size_t granularity = 0;
+    int device = -1;
+    std::vector<CUmemGenericAllocationHandle> handles;
+    
+    static constexpr size_t VMM_BUFFER_MAX_SIZE = 1ull << 34;
+    
+    void init(int dev) {
+        if (device >= 0) return;
+        device = dev;
+        granularity = ggml_cuda_info().devices[dev].vmm_granularity;
+        
+        CUresult res = cuMemAddressReserve(&base_addr, VMM_BUFFER_MAX_SIZE, 0, 0, 0);
+        if (res != CUDA_SUCCESS) {
+            GGML_LOG_WARN("VMM buffer pool: failed to reserve %zu MB\n", VMM_BUFFER_MAX_SIZE / 1024 / 1024);
+            device = -1;
+            return;
+        }
+        reserved_size = VMM_BUFFER_MAX_SIZE;
+        GGML_LOG_INFO("VMM buffer pool[%d]: reserved %zu MB virtual\n", device, reserved_size / 1024 / 1024);
+    }
+    
+    void * alloc(size_t size) {
+        if (device < 0 || base_addr == 0) return nullptr;
+        
+        size_t alloc_size = granularity * ((size + granularity - 1) / granularity);
+        if (committed_size + alloc_size > reserved_size) return nullptr;
+        
+        CUmemAllocationProp prop = {};
+        prop.type = CU_MEM_ALLOCATION_TYPE_PINNED;
+        prop.location.type = CU_MEM_LOCATION_TYPE_DEVICE;
+        prop.location.id = device;
+        
+        CUmemGenericAllocationHandle handle;
+        if (cuMemCreate(&handle, alloc_size, &prop, 0) != CUDA_SUCCESS) return nullptr;
+        
+        CUdeviceptr ptr = base_addr + committed_size;
+        if (cuMemMap(ptr, alloc_size, 0, handle, 0) != CUDA_SUCCESS) {
+            cuMemRelease(handle);
+            return nullptr;
+        }
+        
+        CUmemAccessDesc access = {};
+        access.location.type = CU_MEM_LOCATION_TYPE_DEVICE;
+        access.location.id = device;
+        access.flags = CU_MEM_ACCESS_FLAGS_PROT_READWRITE;
+        cuMemSetAccess(ptr, alloc_size, &access, 1);
+        
+        handles.push_back(handle);
+        committed_size += alloc_size;
+        
+        GGML_LOG_DEBUG("VMM buffer pool[%d]: allocated %zu MB (total: %zu MB)\n",
+                       device, alloc_size / 1024 / 1024, committed_size / 1024 / 1024);
+        return (void*)ptr;
+    }
+    
+    ~ggml_cuda_vmm_buffer_pool() {
+        if (base_addr != 0) {
+            cuMemUnmap(base_addr, committed_size);
+            for (auto & h : handles) cuMemRelease(h);
+            cuMemAddressFree(base_addr, reserved_size);
+        }
+    }
+};
+
+// Per-device lazy buffers storage (for future Ampere+ support)
+// static std::vector<std::unique_ptr<ggml_cuda_vmm_lazy_buffer>> g_vmm_lazy_buffers[GGML_CUDA_MAX_DEVICES];
+
+// NOTE: VMM memcpy wrapper code commented out - not compatible with Pascal runtime API
+// Will work on Ampere+ GPUs where driver API and runtime API can share pointers
+/*
+struct vmm_ptr_info {
+    CUdeviceptr base;
+    size_t size;
+    ggml_cuda_vmm_lazy_buffer * buffer;
+};
+static std::vector<vmm_ptr_info> g_vmm_ptr_table;
+static std::mutex g_vmm_ptr_mutex;
+
+static ggml_cuda_vmm_lazy_buffer * find_vmm_buffer(void * ptr) {
+    std::lock_guard<std::mutex> lock(g_vmm_ptr_mutex);
+    CUdeviceptr dptr = (CUdeviceptr)ptr;
+    for (const auto & info : g_vmm_ptr_table) {
+        if (dptr >= info.base && dptr < info.base + info.size) {
+            return info.buffer;
+        }
+    }
+    return nullptr;
+}
+
+static void register_vmm_ptr(void * ptr, size_t size, ggml_cuda_vmm_lazy_buffer * buf) {
+    std::lock_guard<std::mutex> lock(g_vmm_ptr_mutex);
+    g_vmm_ptr_table.push_back({(CUdeviceptr)ptr, size, buf});
+}
+
+static cudaError_t vmm_memcpy_async(void * dst, const void * src, size_t size, cudaMemcpyKind kind, cudaStream_t stream) {
+    auto * vmm_buf = find_vmm_buffer(dst);
+    if (vmm_buf) {
+        CUdeviceptr base = (CUdeviceptr)vmm_buf->get_ptr();
+        size_t offset = (CUdeviceptr)dst - base;
+        if (!vmm_buf->ensure_committed(offset + size)) {
+            return cudaErrorMemoryAllocation;
+        }
+        CUresult res;
+        if (kind == cudaMemcpyHostToDevice) {
+            res = cuMemcpyHtoDAsync((CUdeviceptr)dst, src, size, (CUstream)stream);
+        } else if (kind == cudaMemcpyDeviceToDevice) {
+            res = cuMemcpyDtoDAsync((CUdeviceptr)dst, (CUdeviceptr)src, size, (CUstream)stream);
+        } else {
+            res = cuMemcpyAsync((CUdeviceptr)dst, (CUdeviceptr)src, size, (CUstream)stream);
+        }
+        return (res == CUDA_SUCCESS) ? cudaSuccess : cudaErrorUnknown;
+    }
+    return cudaMemcpyAsync(dst, src, size, kind, stream);
+}
+*/
+
+static ggml_cuda_vmm_buffer_pool g_vmm_buffer_pools[GGML_CUDA_MAX_DEVICES];
+static bool g_vmm_buffers_enabled = false;
+static bool g_vmm_buffers_checked = false;
+
+static bool ggml_cuda_vmm_buffers_enabled() {
+    if (!g_vmm_buffers_checked) {
+        g_vmm_buffers_enabled = getenv("GGML_CUDA_VMM_BUFFERS") != nullptr;
+        g_vmm_buffers_checked = true;
+        if (g_vmm_buffers_enabled) {
+            GGML_LOG_INFO("VMM buffers enabled via GGML_CUDA_VMM_BUFFERS\n");
+        }
+    }
+    return g_vmm_buffers_enabled;
+}
+#endif // defined(GGML_USE_VMM)
+
+// Check for lazy UVM mode (pages allocated on first touch)
+static bool g_lazy_uvm_enabled = false;
+static bool g_lazy_uvm_checked = false;
+
+static bool ggml_cuda_lazy_uvm_enabled() {
+    if (!g_lazy_uvm_checked) {
+        g_lazy_uvm_enabled = getenv("GGML_CUDA_LAZY_UVM") != nullptr;
+        g_lazy_uvm_checked = true;
+        if (g_lazy_uvm_enabled) {
+            GGML_LOG_INFO("Lazy UVM enabled: memory pages allocated on first touch\n");
+        }
+    }
+    return g_lazy_uvm_enabled;
+}
+
+#if defined(GGML_USE_VMM)
+// Check for lazy VMM mode (chunked physical allocation)
+static bool g_lazy_vmm_enabled = false;
+static bool g_lazy_vmm_checked = false;
+
+static bool ggml_cuda_lazy_vmm_enabled() {
+    if (!g_lazy_vmm_checked) {
+        g_lazy_vmm_enabled = getenv("GGML_CUDA_LAZY_VMM") != nullptr;
+        g_lazy_vmm_checked = true;
+        if (g_lazy_vmm_enabled) {
+            GGML_LOG_INFO("Lazy VMM enabled: physical memory allocated in 512MB chunks on demand\n");
+        }
+    }
+    return g_lazy_vmm_enabled;
+}
+#endif
+
 static cudaError_t ggml_cuda_device_malloc(void ** ptr, size_t size, int device) {
     ggml_cuda_set_device(device);
     cudaError_t err;
+    
+#if defined(GGML_USE_VMM)
+    // NOTE: Lazy VMM (chunked physical allocation) is NOT compatible with Pascal
+    // because VMM memory (driver API) cannot be used with runtime API functions
+    // (cudaMemcpyAsync, cudaMemsetAsync, etc.)
+    // Use GGML_CUDA_LAZY_UVM=1 instead for on-demand page allocation on Pascal
+    
+    // Legacy VMM: allocate all physical memory upfront
+    if (ggml_cuda_vmm_buffers_enabled() && ggml_cuda_info().devices[device].vmm) {
+        g_vmm_buffer_pools[device].init(device);
+        void * vmm_ptr = g_vmm_buffer_pools[device].alloc(size);
+        if (vmm_ptr != nullptr) {
+            *ptr = vmm_ptr;
+            return cudaSuccess;
+        }
+        // Fall through to regular allocation
+    }
+#endif // defined(GGML_USE_VMM)
+    
+    // Lazy UVM: use managed memory with hints for on-demand page allocation
+    if (ggml_cuda_lazy_uvm_enabled()) {
+        err = cudaMallocManaged(ptr, size);
+        if (err == cudaSuccess) {
+            // Tell CUDA this memory will be accessed by this device
+            // Pages will be migrated/allocated on first touch
+            cudaMemAdvise(*ptr, size, cudaMemAdviseSetPreferredLocation, device);
+            cudaMemAdvise(*ptr, size, cudaMemAdviseSetAccessedBy, device);
+            // Prefetch nothing - let pages fault in on demand
+            GGML_LOG_DEBUG("Lazy UVM: allocated %zu MB with on-demand paging\n", size / 1024 / 1024);
+            return cudaSuccess;
+        }
+        // Fall through to regular allocation on failure
+    }
+    
     if (getenv("GGML_CUDA_ENABLE_UNIFIED_MEMORY") != nullptr) {
         err = cudaMallocManaged(ptr, size);
 #if defined(GGML_USE_HIP)

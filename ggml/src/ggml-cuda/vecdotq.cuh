@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common.cuh"
+#include "mmvq_ptx.cuh"
 
 #include <cstdint>
 
@@ -457,30 +458,8 @@ static __device__ __forceinline__ float vec_dot_q3_K_q8_1_impl_mmq(
 #define VDR_Q4_K_Q8_1_MMVQ 2
 #define VDR_Q4_K_Q8_1_MMQ  8
 
-// contiguous v/x values
-static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_vmmq(
-    const int * __restrict__ v, const int * __restrict__ u, const uint8_t * __restrict__ sc,
-    const uint8_t * __restrict__ m, const half2 & dm4, const float * __restrict__ d8) {
-
-    float sumf_d = 0.0f;
-    float sumf_m = 0.0f;
-
-#pragma unroll
-    for (int i = 0; i < QR4_K; ++i) {
-        const int v0i = (v[0] >> (4*i)) & 0x0F0F0F0F;
-        const int v1i = (v[1] >> (4*i)) & 0x0F0F0F0F;
-
-        const int dot1 = ggml_cuda_dp4a(v1i, u[2*i+1], ggml_cuda_dp4a(v0i, u[2*i+0], 0)); // SIMD dot product
-        const int dot2 = ggml_cuda_dp4a(0x01010101, u[2*i+1], ggml_cuda_dp4a(0x01010101, u[2*i+0], 0)); // sum of u
-
-        sumf_d += d8[i] * (dot1 * sc[i]);
-        sumf_m += d8[i] * (dot2 * m[i]);  // multiply constant part of q4_K with sum of q8_1 values
-    }
-
-    const float2 dm4f = __half22float2(dm4);
-
-    return dm4f.x*sumf_d - dm4f.y*sumf_m;
-}
+// NOTE: vec_dot_q4_K_q8_1_impl_vmmq is now defined in mmvq_ptx.cuh
+// Original implementation commented out to avoid conflicts
 
 // contiguous v/x + u/y values
 static __device__ __forceinline__ float vec_dot_q4_K_q8_1_impl_mmq(
@@ -772,51 +751,8 @@ static __device__ __forceinline__ float vec_dot_q3_K_q8_1(
     return vec_dot_q3_K_q8_1_impl_mmvq(vl, vh, u, bq3_K->scales, scale_offset, d, d8);
 }
 
-static __device__ __forceinline__ float vec_dot_q4_K_q8_1(
-    const void * __restrict__ vbq, const block_q8_1 * __restrict__ bq8_1, const int & kbx, const int & iqs) {
-
-    const block_q4_K * bq4_K = (const block_q4_K *) vbq + kbx;
-
-    int    v[2];
-    int    u[2*QR4_K];
-    float d8[QR4_K];
-
-    // iqs is in 0,2..30. bq8_offset = iqs/4 -> bq8_offset = 0, 2, 4, 6
-    const int bq8_offset = QR4_K * ((iqs/2) / (QI8_1/2));
-
-    // iqs = 0....3 -> bq8_offset = 0, want q4_offset = 0, 4, 8, 12
-    // iqs = 4....7 -> bq8_offset = 2, want q4_offset = 32, 36, 40, 44
-    // iqs = 8...11 -> bq8_offset = 4, want q4_offset = 64, 68, 72, 76
-    // iqs = 12..15 -> bq8_offset = 6, want q4_offset = 96, 100, 104, 108
-
-    const int * q4 = (const int *)(bq4_K->qs + 16 * bq8_offset + 4 * ((iqs/2)%4));
-    v[0] = q4[0];
-    v[1] = q4[4];
-
-    const uint16_t * scales = (const uint16_t *)bq4_K->scales;
-    uint16_t aux[2];
-    const int j = bq8_offset/2;
-    if (j < 2) {
-        aux[0] = scales[j+0] & 0x3f3f;
-        aux[1] = scales[j+2] & 0x3f3f;
-    } else {
-        aux[0] = ((scales[j+2] >> 0) & 0x0f0f) | ((scales[j-2] & 0xc0c0) >> 2);
-        aux[1] = ((scales[j+2] >> 4) & 0x0f0f) | ((scales[j-0] & 0xc0c0) >> 2);
-    }
-    const uint8_t * sc = (const uint8_t *)aux;
-    const uint8_t * m  = sc + 2;
-
-    for (int i = 0; i < QR4_K; ++i) {
-        const block_q8_1 * bq8i = bq8_1 + bq8_offset + i;
-        d8[i] = __low2float(bq8i->ds);
-
-        const int * q8 = (const int *)bq8i->qs + ((iqs/2)%4);
-        u[2*i+0] = q8[0];
-        u[2*i+1] = q8[4];
-    }
-
-    return vec_dot_q4_K_q8_1_impl_vmmq(v, u, sc, m, bq4_K->dm, d8);
-}
+// NOTE: vec_dot_q4_K_q8_1 is now defined in mmvq_ptx.cuh
+// Original implementation commented out - using PTX-optimized version
 
 static __device__ __forceinline__ float vec_dot_q5_K_q8_1(
     const void * __restrict__ vbq, const block_q8_1 * __restrict__ bq8_1, const int & kbx, const int & iqs) {

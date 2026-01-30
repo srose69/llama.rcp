@@ -1,7 +1,3 @@
-// DEVICE-SIDE ASYNC SOFT-GATE
-// Замена __syncthreads на warp-level sync для RADICAL performance boost
-// Inspired by liquid9 async-gate concept, adapted for device-side execution
-//
 // KEY INNOVATION:
 // - __syncthreads() = HEAVY (syncs entire block, ~100+ cycles)
 // - __syncwarp() = LIGHT (syncs 32 threads only, ~1 cycle)

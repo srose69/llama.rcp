@@ -62,4 +62,12 @@ analysis.md
 # Internal documentation (not for public repo)
 docs/responses-api/
 expr-srcs/
+exp-srcs/
 ggufs/
+talks
+unittest/
+
+# Binary dumps (DMCA sensitive)
+*.bin
+*.cubin
+*.ptx
